@@ -8,8 +8,8 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-dark: #3B0A0A;          /* Rich Burgundy */
-    --bg-darker: #4A0E0E;        /* Dark Blood Red */
+    --bg-dark: #0F0F0F;          /* Dark Charcoal */
+    --bg-darker: #0F0F0F;        /* Same Charcoal for consistency */
     --bg-card: rgba(30, 30, 30, 0.65); /* Dark Glass */
     --bg-card-hover: rgba(24, 24, 24, 0.85);
     
