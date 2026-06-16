@@ -8,12 +8,12 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-dark: #050505;          /* Matte Black */
-    --bg-darker: #020202;        /* Pitch Black */
-    --bg-card: rgba(16, 16, 16, 0.65); /* Glassmorphic Charcoal */
+    --bg-dark: #3B0A0A;          /* Rich Burgundy */
+    --bg-darker: #4A0E0E;        /* Dark Blood Red */
+    --bg-card: rgba(30, 30, 30, 0.65); /* Dark Glass */
     --bg-card-hover: rgba(24, 24, 24, 0.85);
     
-    --text-white: #F5F5F5;       /* Soft White */
+    --text-white: #F5F0E6;       /* Cream/off-white */
     --text-light: #E5E5E5;
     --text-muted: #8C8C8C;       /* Luxury Grey */
     --text-dark: #1A1A1A;
@@ -52,7 +52,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    background-color: var(--bg-dark);
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
     color: var(--text-light);
     overflow-x: hidden;
 }
@@ -419,7 +419,7 @@ button, input, select, textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #020202;
+    background-color: var(--bg-dark);
     overflow: hidden;
 }
 
@@ -781,7 +781,7 @@ button, input, select, textarea {
    REDESIGNED TEAM SECTION (HORIZONTAL LUXURY SWIPER)
    ========================================================================== */
 .team {
-    background-color: #050505;
+    background-color: var(--bg-dark);
     padding-left: 0;
     padding-right: 0;
 }
@@ -815,7 +815,9 @@ button, input, select, textarea {
 /* Scrollable container setup */
 .team-scroll-outer {
     width: 100%;
-    overflow: visible;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
     padding: 1rem 0;
 }
 
@@ -824,6 +826,8 @@ button, input, select, textarea {
     gap: 1.25rem;
     scroll-snap-type: x mandatory;
     scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+    width: max-content;
 }
 
 .team-grid::-webkit-scrollbar {
