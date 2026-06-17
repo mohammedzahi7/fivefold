@@ -8,6 +8,40 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
+    --bg-start: #3B0A0A;          /* Dark burgundy */
+    --bg-end: #4A0E0E;            /* Deep blood red */
+    --bg-dark: #0F0F0F;          /* Preserve fallback */
+    --bg-darker: #0F0F0F;        /* Preserve fallback */
+    --bg-card: rgba(30, 30, 30, 0.65); /* Dark Glass */
+    --bg-card-hover: rgba(24, 24, 24, 0.85);
+    
+    --text-white: #F5F0E6;       /* Cream/off-white */
+    --text-light: #E5E5E5;
+    --text-muted: #8C8C8C;       /* Luxury Grey */
+    --text-dark: #1A1A1A;
+    
+    --gold: #D4AF37;             /* Accent Gold */
+    --gold-glow: rgba(212, 175, 55, 0.2);
+    --gold-gradient: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
+    
+    --purple: #6C3BFF;           /* Secondary Accent Purple */
+    --purple-glow: rgba(108, 59, 255, 0.25);
+    
+    --border-color: rgba(255, 255, 255, 0.04);
+    --border-hover: rgba(212, 175, 55, 0.2);
+    --border-purple: rgba(108, 59, 255, 0.15);
+    
+    --font-headings: 'Clash Display', 'Satoshi', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Satoshi', sans-serif;
+    
+    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 30px rgba(108, 59, 255, 0.08);
+}
+
     --bg-dark: #0F0F0F;          /* Dark Charcoal */
     --bg-darker: #0F0F0F;        /* Same Charcoal for consistency */
     --bg-card: rgba(30, 30, 30, 0.65); /* Dark Glass */
@@ -52,7 +86,42 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+        :root {
+        --bg-start: #3B0A0A;          /* Dark burgundy */
+        --bg-end: #4A0E0E;            /* Deep blood red */
+        --bg-gradient: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+        --bg-light: #F5F0E6;          /* Cream/off-white background */
+        --bg-dark: #0F0F0F;          /* Fallback dark */
+        --bg-darker: #0F0F0F;        /* Fallback dark */
+        --bg-card: rgba(30, 30, 30, 0.65);
+        --bg-card-hover: rgba(24, 24, 24, 0.85);
+        
+        --text-white: #F5F0E6;       /* Cream/off-white */
+        --text-light: #E5E5E5;
+        --text-muted: #8C8C8C;       /* Luxury Grey */
+        --text-dark: #1A1A1A;
+        
+        --gold: #D4AF37;             /* Accent Gold */
+        --gold-glow: rgba(212, 175, 55, 0.2);
+        --gold-gradient: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
+        
+        --purple: #6C3BFF;           /* Secondary Accent Purple */
+        --purple-glow: rgba(108, 59, 255, 0.25);
+        
+        --border-color: rgba(255, 255, 255, 0.04);
+        --border-hover: rgba(212, 175, 55, 0.2);
+        --border-purple: rgba(108, 59, 255, 0.15);
+        
+        --font-headings: 'Clash Display', 'Satoshi', sans-serif;
+        --font-body: 'Inter', sans-serif;
+        --font-accent: 'Satoshi', sans-serif;
+        
+        --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        
+        --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.6);
+        --shadow-glow: 0 0 30px rgba(108, 59, 255, 0.08);
+    }
     color: var(--text-light);
     overflow-x: hidden;
 }
@@ -63,13 +132,15 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    background-color: var(--bg-dark);
+    background: var(--bg-gradient);
+    background-attachment: fixed;
     /* Subtle luxury texture grain */
-    background-image: 
+    background-image:
         radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
         linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
     background-size: 100% 100%, 80px 80px, 80px 80px;
+    color: var(--text-white);
 }
 
 /* Custom Scrollbar */
@@ -167,6 +238,14 @@ button, input, select, textarea {
     margin-bottom: 1.5rem;
     font-family: var(--font-accent);
 }
+
+    /* Fade‑in section utilities */
+    .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-section.visible { opacity: 1; transform: none; }
 
 .section-title {
     font-size: clamp(2rem, 4.5vw, 3.2rem);
