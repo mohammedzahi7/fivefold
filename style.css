@@ -1,8 +1,7 @@
 /* ==========================================================================
    PREMIUM FONTS IMPORT (FONTSHARE CDN & GOOGLE FONTS)
    ========================================================================== */
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&f[]=clash-display@500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ==========================================================================
    DESIGN VARIABLES & COLOR SYSTEM
@@ -10,17 +9,32 @@
 :root {
     --bg-start: #3B0A0A;          /* Dark burgundy */
     --bg-end: #4A0E0E;            /* Deep blood red */
-    --bg-dark: #0F0F0F;          /* Preserve fallback */
-    --bg-darker: #0F0F0F;        /* Preserve fallback */
-    --bg-card: rgba(30, 30, 30, 0.65); /* Dark Glass */
-    --bg-card-hover: rgba(24, 24, 24, 0.85);
+    --bg-dark: #0F0F0F;          /* Fallback dark */
+    --bg-darker: #0F0F0F;        /* Fallback dark */
+    --bg-card: rgba(30, 30, 30, 0.45); /* Subtle glass */
+    --bg-card-hover: rgba(24, 24, 24, 0.75);
     
     --text-white: #F5F0E6;       /* Cream/off-white */
     --text-light: #E5E5E5;
-    --text-muted: #8C8C8C;       /* Luxury Grey */
+    --text-muted: rgba(245, 240, 230, 0.6);   /* Soft muted cream */
     --text-dark: #1A1A1A;
     
     --gold: #D4AF37;             /* Accent Gold */
+    --gold-glow: rgba(212, 175, 55, 0.2);
+    --gold-gradient: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
+    
+    --border-color: rgba(245, 240, 230, 0.1); /* Ultra‑thin cream border */
+    --border-hover: rgba(212, 175, 55, 0.2);
+    
+    --font-headings: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-accent: 'Inter', sans-serif;
+    
+    --transition-smooth: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-fast: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    --shadow-soft: 0 20px 40px rgba(60, 10, 10, 0.4); /* Soft burgundy glow */
+    --shadow-glow: 0 0 30px rgba(212, 175, 55, 0.15);
     --gold-glow: rgba(212, 175, 55, 0.2);
     --gold-gradient: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
     
@@ -201,8 +215,8 @@ button, input, select, textarea {
    ========================================================================== */
 .glass-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(20px) saturate(160%);
-    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
@@ -210,7 +224,7 @@ button, input, select, textarea {
 
 .glass-panel:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 30px 60px rgba(60, 10, 10, 0.45);
 }
 
 .gold-text {
@@ -316,28 +330,31 @@ button, input, select, textarea {
     font-family: var(--font-accent);
 }
 
+/* Primary button – cream background with dark burgundy text */
 .btn-primary {
-    background: var(--gold);
-    color: var(--bg-darker);
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+    background: var(--text-white);
+    color: var(--bg-start);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12);
 }
 
 .btn-primary:hover {
-    background: var(--text-white);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    background: rgba(245, 240, 230, 0.85);
+    transform: scale(1.03);
+    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2);
 }
 
+/* Secondary button – transparent with cream border */
 .btn-secondary {
     background: transparent;
     color: var(--text-white);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--text-white);
 }
 
 .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(245, 240, 230, 0.12);
     border-color: var(--text-white);
-    transform: translateY(-2px);
+    transform: scale(1.03);
 }
 
 .btn-text {
