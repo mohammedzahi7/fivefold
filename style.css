@@ -120,7 +120,7 @@ button, input, select, textarea {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 0;
 }
 
 .section-padding {
@@ -298,6 +298,24 @@ button, input, select, textarea {
 
 .btn-text:hover i {
     transform: translateX(5px);
+}
+
+// Mobile navigation toggle logic
+const mobileNavToggle = document.getElementById('mobileNavToggle');
+const navMenu = document.getElementById('navMenu');
+const navOverlay = document.getElementById('navOverlay');
+if (mobileNavToggle && navMenu && navOverlay) {
+    mobileNavToggle.addEventListener('click', () => {
+        const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
+        mobileNavToggle.setAttribute('aria-expanded', !expanded);
+        navMenu.classList.toggle('open');
+        navOverlay.classList.toggle('show');
+    });
+    navOverlay.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        navOverlay.classList.remove('show');
+        mobileNavToggle.setAttribute('aria-expanded', 'false');
+    });
 }
 
 /* Custom Cursor Glow */
@@ -632,6 +650,79 @@ button, input, select, textarea {
     left: 50%;
     transform: translateX(-50%);
     animation: scrollMouse 1.8s infinite ease-in-out;
+}
+
+// TEAM SLIDER CAROUSEL LOGIC
+const teamSlider = document.getElementById('teamSlider');
+const teamPrevBtn = document.getElementById('teamPrev');
+const teamNextBtn = document.getElementById('teamNext');
+const teamDotElements = document.querySelectorAll('#teamDots .dot');
+let teamCurrentIndex = 0;
+
+const getCardsPerView = () => {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1025) return 2;
+    return 3;
+};
+
+function debounce(fn, delay) {
+    let timer;
+    return () => {
+        clearTimeout(timer);
+        timer = setTimeout(fn, delay);
+    };
+}
+
+const updateTeamSlider = () => {
+    const cards = document.querySelectorAll('#teamSlider .team-card');
+    if (!teamSlider || cards.length === 0) return;
+
+    const cardsPerView = getCardsPerView();
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+    if (teamCurrentIndex > maxIndex) teamCurrentIndex = maxIndex;
+    if (teamCurrentIndex < 0) teamCurrentIndex = 0;
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(cards[0]).marginRight) || 0;
+    const offset = -teamCurrentIndex * (cardWidth + gap);
+    teamSlider.style.transform = `translateX(${offset}px)`;
+
+    // Update dots
+    teamDotElements.forEach((dot, index) => {
+        dot.classList.toggle('active', index === teamCurrentIndex);
+        dot.style.display = index > maxIndex ? 'none' : 'block';
+    });
+};
+
+if (teamSlider) {
+    if (teamNextBtn) {
+        teamNextBtn.addEventListener('click', () => {
+            const cards = document.querySelectorAll('#teamSlider .team-card');
+            const maxIndex = Math.max(0, cards.length - getCardsPerView());
+            teamCurrentIndex = teamCurrentIndex < maxIndex ? teamCurrentIndex + 1 : 0;
+            updateTeamSlider();
+        });
+    }
+    if (teamPrevBtn) {
+        teamPrevBtn.addEventListener('click', () => {
+            const cards = document.querySelectorAll('#teamSlider .team-card');
+            const maxIndex = Math.max(0, cards.length - getCardsPerView());
+            teamCurrentIndex = teamCurrentIndex > 0 ? teamCurrentIndex - 1 : maxIndex;
+            updateTeamSlider();
+        });
+    }
+
+    teamDotElements.forEach(dot => {
+        dot.addEventListener('click', e => {
+            teamCurrentIndex = parseInt(e.target.getAttribute('data-slide'), 10);
+            updateTeamSlider();
+        });
+    });
+
+    window.addEventListener('resize', debounce(updateTeamSlider, 150));
+    window.addEventListener('load', updateTeamSlider);
+    setTimeout(updateTeamSlider, 250);
 }
 
 /* ==========================================================================
