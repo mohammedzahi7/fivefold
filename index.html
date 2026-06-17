@@ -41,6 +41,9 @@
 
     <!-- Custom Animated Cursor Highlight (Premium UI touch) -->
     <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <!-- Mobile Nav overlay backdrop -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Header Navigation -->
     <header class="header" id="header">
@@ -51,13 +54,13 @@
 
             <nav class="nav-menu" id="navMenu">
                 <ul>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="why-fivefold.html" class="nav-link">Why FiveFold</a></li>
-                    <li><a href="team.html" class="nav-link">Team</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Work</a></li>
-                    <li><a href="process.html" class="nav-link">Process</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#why-us" class="nav-link">Why FiveFold</a></li>
+                    <li><a href="#team" class="nav-link">Team</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Work</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
@@ -262,235 +265,255 @@
 <section class="team section-padding" id="team" style="background-color: var(--bg-darker);">
     <div class="container">
         <div class="team-header-container">
-            <div class="section-header" style="text-align:center;">
+            <div class="section-header" style="text-align:center; width: 100%;">
                 <span class="subtitle-badge">MEET THE TEAM</span>
                 <h2 class="section-title">The creative minds behind FiveFold Productions.</h2>
                 <p class="section-subtitle">Strategy, storytelling, cinematography, editing, branding, and content production under one roof.</p>
                 <div class="divider" style="width: 80px; height: 3px; background: var(--gold); margin: 1rem auto;"></div>
             </div>
         </div>
-        <div class="team-grid">
-            <!-- MEMBER 01 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="/assets/zahi_new.jpg" alt="Mohammed Zahi" class="team-image" />
-                </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 01</span>
-                    <h3 class="team-name">Mohammed Zahi</h3>
-                    <span class="team-tag gold-text">Managing Director</span>
-                    <p class="team-bio">Leads business strategy, client acquisition, partnerships, and company growth initiatives.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>Business Development</li>
-                            <li>Client Relations</li>
-                            <li>Team Leadership</li>
-                            <li>Strategic Planning</li>
-                            <li>Project Management</li>
-                            <li>Brand Growth</li>
-                        </ul>
+        
+        <div class="team-slider-container">
+            <div class="team-slider-track-wrapper">
+                <div class="team-slider" id="teamSlider">
+                    <!-- MEMBER 01 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/zahi_new.jpg" alt="Mohammed Zahi" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 01</span>
+                            <h3 class="team-name">Mohammed Zahi</h3>
+                            <span class="team-tag gold-text">Managing Director</span>
+                            <p class="team-bio">Leads business strategy, client acquisition, partnerships, and company growth initiatives.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>Business Development</li>
+                                    <li>Client Relations</li>
+                                    <li>Team Leadership</li>
+                                    <li>Strategic Planning</li>
+                                    <li>Project Management</li>
+                                    <li>Brand Growth</li>
+                                </ul>
+                            </div>
+                            <div class="team-resp">
+                                <strong>Responsibilities:</strong>
+                                <ul>
+                                    <li>Managing operations</li>
+                                    <li>Client & partnerships</li>
+                                    <li>Business expansion</li>
+                                    <li>Financial planning</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 12 Years</p>
+                                <p><strong>Department:</strong> Executive</p>
+                                <p><strong>Specialty:</strong> Strategic Growth</p>
+                                <p class="team-quote">"Great stories deserve great visuals."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:workwithfivefold@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-resp">
-                        <strong>Responsibilities:</strong>
-                        <ul>
-                            <li>Managing company operations</li>
-                            <li>Client meetings & partnerships</li>
-                            <li>Business expansion</li>
-                            <li>Financial planning</li>
-                        </ul>
+                    <!-- MEMBER 02 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/sahil_new.jpg" alt="Mohammed Sahil" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 02</span>
+                            <h3 class="team-name">Mohammed Sahil</h3>
+                            <span class="team-tag gold-text">Director of Photography & Editor</span>
+                            <p class="team-bio">Responsible for visual storytelling, cinematography, camera operations, and creative video production.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>Cinematography</li>
+                                    <li>Camera Operation</li>
+                                    <li>Lighting Design</li>
+                                    <li>Video Editing</li>
+                                    <li>Color Correction</li>
+                                    <li>Storytelling</li>
+                                </ul>
+                            </div>
+                            <div class="team-tools">
+                                <strong>Tools:</strong>
+                                <ul>
+                                    <li>Premiere Pro</li>
+                                    <li>DaVinci Resolve</li>
+                                    <li>Lightroom</li>
+                                    <li>Cinema Cameras</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 8 Years</p>
+                                <p><strong>Department:</strong> Production</p>
+                                <p><strong>Specialty:</strong> Cinematic Visuals</p>
+                                <p class="team-quote">"Every frame should feel like a painting."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:workwithfivefold@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 12</p>
-                        <p><strong>Department:</strong> Executive</p>
-                        <p><strong>Specialty:</strong> Strategic Growth</p>
-                        <p class="team-quote">"Great stories deserve great visuals."</p>
+                    <!-- MEMBER 03 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/member_3.jpg" alt="Akif Anis" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 03</span>
+                            <h3 class="team-name">Akif Anis</h3>
+                            <span class="team-tag gold-text">Social Media Content Director</span>
+                            <p class="team-bio">Crafts engaging social content, reels, trends research, and rapid‑turnaround editing.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>Content Strategy</li>
+                                    <li>Instagram Marketing</li>
+                                    <li>Social Media Campaigns</li>
+                                    <li>Copywriting</li>
+                                    <li>Audience Growth</li>
+                                    <li>Brand Positioning</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 5 Years</p>
+                                <p><strong>Department:</strong> Social Media</p>
+                                <p><strong>Specialty:</strong> Trend‑Driven Content</p>
+                                <p class="team-quote">"Stories are best told in 15 seconds."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:workwithfivefold@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <!-- MEMBER 04 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/member_2.jpg" alt="Shazin Rafi" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 04</span>
+                            <h3 class="team-name">Shazin Rafi</h3>
+                            <span class="team-tag gold-text">Visual Stylist & Lead Colorist</span>
+                            <p class="team-bio">Defines visual aesthetics, color grading, and premium brand styling.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>Color Grading</li>
+                                    <li>Visual Styling</li>
+                                    <li>Creative Direction</li>
+                                    <li>Mood Development</li>
+                                    <li>Film Look Creation</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 7 Years</p>
+                                <p><strong>Department:</strong> Post‑Production</p>
+                                <p><strong>Specialty:</strong> Brand Visual Identity</p>
+                                <p class="team-quote">"Colors tell the story before words do."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MEMBER 05 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/member_4.jpg" alt="Adhil Azeez" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 05</span>
+                            <h3 class="team-name">Adhil Azeez</h3>
+                            <span class="team-tag gold-text">Senior Post‑Production Editor</span>
+                            <p class="team-bio">Manages editing workflows, motion graphics, audio sync, and final content delivery.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>Advanced Editing</li>
+                                    <li>Motion Graphics</li>
+                                    <li>Audio Sync</li>
+                                    <li>Story Assembly</li>
+                                    <li>Timeline Optimization</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 9 Years</p>
+                                <p><strong>Department:</strong> Post‑Production</p>
+                                <p><strong>Specialty:</strong> High‑End Editing</p>
+                                <p class="team-quote">"Precision in edit creates perfection in story."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MEMBER 06 -->
+                    <div class="team-card premium-card reveal-up" data-tilt>
+                        <div class="team-image-wrapper">
+                            <img src="assets/member_5.jpg" alt="Muhammed Nazim" class="team-image" />
+                        </div>
+                        <div class="team-info">
+                            <span class="team-number">MEMBER 06</span>
+                            <h3 class="team-name">Muhammed Nazim</h3>
+                            <span class="team-tag gold-text">BTS Lead & Digital Media Editor</span>
+                            <p class="team-bio">Captures behind‑the‑scenes content, creates reels, and produces short‑form social media assets.</p>
+                            <div class="team-skills">
+                                <strong>Core Skills:</strong>
+                                <ul>
+                                    <li>BTS Documentation</li>
+                                    <li>Reels Creation</li>
+                                    <li>Short Form Editing</li>
+                                    <li>Social Content Production</li>
+                                    <li>Behind The Scenes Coverage</li>
+                                </ul>
+                            </div>
+                            <div class="team-extra">
+                                <p><strong>Experience:</strong> 6 Years</p>
+                                <p><strong>Department:</strong> Production Support</p>
+                                <p><strong>Specialty:</strong> Dynamic BTS Content</p>
+                                <p class="team-quote">"The story continues off‑camera."</p>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- MEMBER 02 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="/assets/sahil_new.jpg" alt="Mohammed Sahil" class="team-image" />
+            
+            <!-- Slider Navigation controls -->
+            <div class="team-slider-controls">
+                <button class="slider-arrow prev" id="teamPrev" aria-label="Previous Team Member"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots" id="teamDots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                    <span class="dot" data-slide="4"></span>
+                    <span class="dot" data-slide="5"></span>
                 </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 02</span>
-                    <h3 class="team-name">Mohammed Sahil</h3>
-                    <span class="team-tag gold-text">Director of Photography & Video Editor</span>
-                    <p class="team-bio">Responsible for visual storytelling, cinematography, camera operations, and creative video production.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>Cinematography</li>
-                            <li>Camera Operation</li>
-                            <li>Lighting Design</li>
-                            <li>Video Editing</li>
-                            <li>Color Correction</li>
-                            <li>Storytelling</li>
-                        </ul>
-                    </div>
-                    <div class="team-tools">
-                        <strong>Tools:</strong>
-                        <ul>
-                            <li>Premiere Pro</li>
-                            <li>DaVinci Resolve</li>
-                            <li>Lightroom</li>
-                            <li>Professional Camera Systems</li>
-                        </ul>
-                    </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 8</p>
-                        <p><strong>Department:</strong> Production</p>
-                        <p><strong>Specialty:</strong> Cinematic Visuals</p>
-                        <p class="team-quote">"Every frame should feel like a painting."</p>
-                    </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:workwithfivefold@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- MEMBER 03 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="assets/member_3.jpg" alt="Akif Anis" class="team-image" />
-                </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 03</span>
-                    <h3 class="team-name">Akif Anis</h3>
-                    <span class="team-tag gold-text">Social Media Content Director</span>
-                    <p class="team-bio">Crafts engaging social content, reels, trends research, and rapid‑turnaround editing.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>Content Strategy</li>
-                            <li>Instagram Marketing</li>
-                            <li>Social Media Campaigns</li>
-                            <li>Copywriting</li>
-                            <li>Audience Growth</li>
-                            <li>Brand Positioning</li>
-                        </ul>
-                    </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 5</p>
-                        <p><strong>Department:</strong> Social Media</p>
-                        <p><strong>Specialty:</strong> Trend‑Driven Content</p>
-                        <p class="team-quote">"Stories are best told in 15 seconds."</p>
-                    </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- MEMBER 04 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="assets/member_2.jpg" alt="Shazin Rafi" class="team-image" />
-                </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 04</span>
-                    <h3 class="team-name">Shazin Rafi</h3>
-                    <span class="team-tag gold-text">Visual Stylist & Lead Colorist</span>
-                    <p class="team-bio">Defines visual aesthetics, color grading, and premium brand styling.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>Color Grading</li>
-                            <li>Visual Styling</li>
-                            <li>Creative Direction</li>
-                            <li>Mood Development</li>
-                            <li>Film Look Creation</li>
-                        </ul>
-                    </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 7</p>
-                        <p><strong>Department:</strong> Post‑Production</p>
-                        <p><strong>Specialty:</strong> Brand Visual Identity</p>
-                        <p class="team-quote">"Colors tell the story before words do."</p>
-                    </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- MEMBER 05 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="assets/member_4.jpg" alt="Adhil Azeez" class="team-image" />
-                </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 05</span>
-                    <h3 class="team-name">Adhil Azeez</h3>
-                    <span class="team-tag gold-text">Senior Post‑Production Editor</span>
-                    <p class="team-bio">Manages editing workflows, motion graphics, audio sync, and final content delivery.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>Advanced Editing</li>
-                            <li>Motion Graphics</li>
-                            <li>Audio Sync</li>
-                            <li>Story Assembly</li>
-                            <li>Timeline Optimization</li>
-                        </ul>
-                    </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 9</p>
-                        <p><strong>Department:</strong> Post‑Production</p>
-                        <p><strong>Specialty:</strong> High‑End Editing</p>
-                        <p class="team-quote">"Precision in edit creates perfection in story."</p>
-                    </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- MEMBER 06 -->
-            <div class="team-card premium-card reveal-up" data-tilt>
-                <div class="team-image-wrapper">
-                    <img src="assets/member_5.jpg" alt="Muhammed Nazim" class="team-image" />
-                </div>
-                <div class="team-info" style="padding:1.5rem;">
-                    <span class="team-number">MEMBER 06</span>
-                    <h3 class="team-name">Muhammed Nazim</h3>
-                    <span class="team-tag gold-text">BTS Lead & Digital Media Editor</span>
-                    <p class="team-bio">Captures behind‑the‑scenes content, creates reels, and produces short‑form social media assets.</p>
-                    <div class="team-skills">
-                        <strong>Core Skills:</strong>
-                        <ul>
-                            <li>BTS Documentation</li>
-                            <li>Reels Creation</li>
-                            <li>Short Form Editing</li>
-                            <li>Social Content Production</li>
-                            <li>Behind The Scenes Coverage</li>
-                        </ul>
-                    </div>
-                    <div class="team-extra">
-                        <p><strong>Years of Experience:</strong> 6</p>
-                        <p><strong>Department:</strong> Production Support</p>
-                        <p><strong>Specialty:</strong> Dynamic BTS Content</p>
-                        <p class="team-quote">"The story continues off‑camera."</p>
-                    </div>
-                    <div class="team-social" style="margin-top:1rem;">
-                        <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:hello@fivefoldproductions.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
+                <button class="slider-arrow next" id="teamNext" aria-label="Next Team Member"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
-        <div class="team-tagline-container reveal-fade" style="text-align:center;margin-top:2rem;">
+
+        <div class="team-tagline-container reveal-fade">
             <p class="team-tagline gold-text">Together, we create visual stories that inspire and connect.</p>
         </div>
     </div>
@@ -1011,7 +1034,7 @@
                             <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
                             <div class="info-text">
                                 <h4>WhatsApp Chat</h4>
-                                <p><a href="https://wa.me/91940531192" target="_blank">+91 9400531192</a></p>
+                                <p><a href="https://wa.me/919400531192" target="_blank">+91 9400531192</a></p>
                             </div>
                         </li>
                     </ul>
@@ -1179,7 +1202,7 @@
     </button>
 
     <!-- Floating WhatsApp Chat Widget -->
-    <a href="https://wa.me/919876543210?text=Hi%20FiveFold%20Productions%2C%20I%20would%20like%20to%20inquire%20about%20your%20creative%20production%20services."
+    <a href="https://wa.me/919400531192?text=Hi%20FiveFold%20Productions%2C%20I%20would%20like%20to%20inquire%20about%20your%20creative%20production%20services."
         class="whatsapp-float-widget" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Chat with us</span>

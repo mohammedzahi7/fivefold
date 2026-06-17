@@ -100,18 +100,33 @@ window.addEventListener('scroll', () => {
 // ==========================================================================
 const mobileNavToggle = document.getElementById('mobileNavToggle');
 const navMenu = document.getElementById('navMenu');
+const navOverlay = document.getElementById('navOverlay');
 
-mobileNavToggle.addEventListener('click', () => {
-    mobileNavToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
-
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileNavToggle.classList.remove('active');
-        navMenu.classList.remove('active');
+if (mobileNavToggle && navMenu) {
+    mobileNavToggle.addEventListener('click', () => {
+        mobileNavToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        if (navOverlay) navOverlay.classList.toggle('active');
     });
-});
+}
+
+if (navLinks) {
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (mobileNavToggle) mobileNavToggle.classList.remove('active');
+            if (navMenu) navMenu.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+        });
+    });
+}
+
+if (navOverlay) {
+    navOverlay.addEventListener('click', () => {
+        if (mobileNavToggle) mobileNavToggle.classList.remove('active');
+        if (navMenu) navMenu.classList.remove('active');
+        navOverlay.classList.remove('active');
+    });
+}
 
 
 // ==========================================================================
@@ -390,7 +405,7 @@ window.handleFormSubmit = (e) => {
                      `• *Project Details:* ${message}`;
         
         const encodedText = encodeURIComponent(text);
-        window.open(`https://wa.me/919876543210?text=${encodedText}`, '_blank');
+        window.open(`https://wa.me/919400531192?text=${encodedText}`, '_blank');
     };
 
     successModal.classList.add('show');
@@ -410,7 +425,7 @@ window.triggerWhatsAppConsultation = () => {
     const message = `Hi FiveFold Productions, my name is ${name}. I am looking for creative support with "${service}" services. I would like to schedule a call.`;
     
     const encodedText = encodeURIComponent(message);
-    window.open(`https://wa.me/919876543210?text=${encodedText}`, '_blank');
+    window.open(`https://wa.me/919400531192?text=${encodedText}`, '_blank');
 };
 
 
@@ -433,3 +448,98 @@ backToTopBtn.addEventListener('click', () => {
         behavior: 'smooth'
     });
 });
+
+
+// ==========================================================================
+// TEAM SLIDER CAROUSEL LOGIC
+// ==========================================================================
+const teamSlider = document.getElementById('teamSlider');
+const teamPrevBtn = document.getElementById('teamPrev');
+const teamNextBtn = document.getElementById('teamNext');
+const teamDotElements = document.querySelectorAll('#teamDots .dot');
+let teamCurrentIndex = 0;
+
+const getCardsPerView = () => {
+    if (window.innerWidth < 768) return 1;
+    if (window.innerWidth < 1025) return 2;
+    return 3;
+};
+
+const updateTeamSlider = () => {
+    const cards = document.querySelectorAll('#teamSlider .team-card');
+    if (!teamSlider || cards.length === 0) return;
+
+    const cardsPerView = getCardsPerView();
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+    if (teamCurrentIndex > maxIndex) teamCurrentIndex = maxIndex;
+    if (teamCurrentIndex < 0) teamCurrentIndex = 0;
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24; // 1.5rem gap matches CSS
+    const offset = -teamCurrentIndex * (cardWidth + gap);
+    
+    teamSlider.style.transform = `translateX(${offset}px)`;
+
+    // Update dots visibility and active status
+    teamDotElements.forEach((dot, index) => {
+        dot.classList.remove('active');
+        if (index === teamCurrentIndex) {
+            dot.classList.add('active');
+        }
+        // Hide dot if it is beyond the max scrollable index (meaning scrolling there makes no change)
+        if (index > maxIndex) {
+            dot.style.display = 'none';
+        } else {
+            dot.style.display = 'block';
+        }
+    });
+};
+
+if (teamSlider) {
+    if (teamNextBtn) {
+        teamNextBtn.addEventListener('click', () => {
+            const cards = document.querySelectorAll('#teamSlider .team-card');
+            const cardsPerView = getCardsPerView();
+            const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+            if (teamCurrentIndex < maxIndex) {
+                teamCurrentIndex++;
+            } else {
+                teamCurrentIndex = 0; // wrap around to beginning
+            }
+            updateTeamSlider();
+        });
+    }
+
+    if (teamPrevBtn) {
+        teamPrevBtn.addEventListener('click', () => {
+            const cards = document.querySelectorAll('#teamSlider .team-card');
+            const cardsPerView = getCardsPerView();
+            const maxIndex = Math.max(0, cards.length - cardsPerView);
+
+            if (teamCurrentIndex > 0) {
+                teamCurrentIndex--;
+            } else {
+                teamCurrentIndex = maxIndex; // wrap around to end
+            }
+            updateTeamSlider();
+        });
+    }
+
+    teamDotElements.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            teamCurrentIndex = parseInt(e.target.getAttribute('data-slide'), 10);
+            updateTeamSlider();
+        });
+    });
+
+    window.addEventListener('resize', () => {
+        // Debounce resize adjustments to avoid layout jittering
+        setTimeout(updateTeamSlider, 100);
+    });
+
+    // Run layout adjustments after resources load to get exact offsets
+    window.addEventListener('load', updateTeamSlider);
+    setTimeout(updateTeamSlider, 250);
+}
