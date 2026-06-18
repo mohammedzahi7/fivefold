@@ -7,30 +7,30 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-start: #3B0A0A;          /* Dark burgundy */
-    --bg-end: #4A0E0E;            /* Deep blood red */
+    --bg-start: #f5f0e6;          /* Light Ivory */
+    --bg-end: #ffffff;            /* White */
     --bg-gradient: linear-gradient(135deg, var(--bg-start), var(--bg-end));
-    --bg-light: #F5F0E6;          /* Cream/off-white background */
-    --bg-dark: #0F0F0F;          /* Fallback dark */
-    --bg-darker: #0F0F0F;        /* Fallback dark */
-    --bg-card: rgba(30, 30, 30, 0.65);
-    --bg-card-hover: rgba(24, 24, 24, 0.85);
+    --bg-light: #f5f0e6;
+    --bg-dark: #ffffff;           /* Alternate section background: White */
+    --bg-darker: #f5f0e6;         /* Alternate section background: Light Ivory */
+    --bg-card: #ffffff;           /* Cards background: White */
+    --bg-card-hover: #fcfaf7;
     
-    --text-white: #F5F0E6;       /* Cream/off-white */
-    --text-light: #E5E5E5;
-    --text-muted: #8C8C8C;       /* Luxury Grey */
-    --text-dark: #1A1A1A;
+    --text-white: #3b0a0a;        /* Re-map default title/main text to Deep Burgundy */
+    --text-light: #521c1c;        /* Body text: Slightly lighter burgundy */
+    --text-muted: #7a6e65;        /* Muted text: Dark warm brown */
+    --text-dark: #f5f0e6;         /* Inverted text color for hover or dark elements */
     
-    --gold: #D4AF37;             /* Accent Gold */
-    --gold-glow: rgba(212, 175, 55, 0.2);
-    --gold-gradient: linear-gradient(135deg, #FFE082 0%, #D4AF37 50%, #AA7C11 100%);
+    --gold: #942525;              /* Re-map Gold accent variable to Rich Crimson */
+    --gold-glow: rgba(148, 37, 37, 0.15);
+    --gold-gradient: linear-gradient(135deg, #c93d3d 0%, #942525 50%, #721919 100%);
     
-    --purple: #6C3BFF;           /* Secondary Accent Purple */
-    --purple-glow: rgba(108, 59, 255, 0.25);
+    --purple: #3b0a0a;            /* Re-map Purple accent to Deep Burgundy */
+    --purple-glow: rgba(59, 10, 10, 0.08);
     
-    --border-color: transparent; /* Set to transparent to remove borders off the website */
-    --border-hover: transparent;
-    --border-purple: transparent;
+    --border-color: rgba(59, 10, 10, 0.08); /* Very subtle burgundy outlines for layouts */
+    --border-hover: rgba(148, 37, 37, 0.2);
+    --border-purple: rgba(148, 37, 37, 0.1);
     
     --font-headings: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -39,8 +39,9 @@
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     
-    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 30px rgba(108, 59, 255, 0.08);
+    --shadow-soft: 0 15px 35px rgba(59, 10, 10, 0.06); /* Soft luxury shadows */
+    --shadow-hover: 0 25px 50px rgba(59, 10, 10, 0.1);
+    --shadow-glow: 0 0 25px rgba(148, 37, 37, 0.08);
 }
 
 /* ==========================================================================
@@ -144,7 +145,7 @@ button, input, select, textarea {
 
 .glass-panel:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 30px 60px rgba(60, 10, 10, 0.45);
+    box-shadow: 0 30px 60px rgba(59, 10, 10, 0.08);
 }
 
 .gold-text {
@@ -152,7 +153,7 @@ button, input, select, textarea {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #FFFFFF 30%, #D4AF37 70%, #6C3BFF 100%);
+    background: linear-gradient(135deg, #3b0a0a 20%, #942525 60%, #521c1c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -250,30 +251,31 @@ button, input, select, textarea {
     font-family: var(--font-accent);
 }
 
-/* Primary button – cream background with dark burgundy text */
+/* Primary button – deep burgundy background with light ivory text */
 .btn-primary {
-    background: var(--text-white);
-    color: var(--bg-start);
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.12);
+    background: #3b0a0a;
+    color: #f5f0e6;
+    border: 1px solid #3b0a0a;
+    box-shadow: 0 4px 20px rgba(59, 10, 10, 0.08);
 }
 
 .btn-primary:hover {
-    background: rgba(245, 240, 230, 0.85);
+    background: #942525;
+    border-color: #942525;
     transform: scale(1.03);
-    box-shadow: 0 6px 25px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 6px 25px rgba(148, 37, 37, 0.15);
 }
 
-/* Secondary button – transparent with cream border */
+/* Secondary button – transparent with deep burgundy border */
 .btn-secondary {
     background: transparent;
-    color: var(--text-white);
-    border: 1px solid var(--text-white);
+    color: #3b0a0a;
+    border: 1px solid #3b0a0a;
 }
 
 .btn-secondary:hover {
-    background: rgba(245, 240, 230, 0.12);
-    border-color: var(--text-white);
+    background: rgba(59, 10, 10, 0.05);
+    border-color: #3b0a0a;
     transform: scale(1.03);
 }
 
@@ -301,35 +303,18 @@ button, input, select, textarea {
     transform: translateX(5px);
 }
 
-// Mobile navigation toggle logic
-const mobileNavToggle = document.getElementById('mobileNavToggle');
-const navMenu = document.getElementById('navMenu');
-const navOverlay = document.getElementById('navOverlay');
-if (mobileNavToggle && navMenu && navOverlay) {
-    mobileNavToggle.addEventListener('click', () => {
-        const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
-        mobileNavToggle.setAttribute('aria-expanded', !expanded);
-        navMenu.classList.toggle('open');
-        navOverlay.classList.toggle('show');
-    });
-    navOverlay.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        navOverlay.classList.remove('show');
-        mobileNavToggle.setAttribute('aria-expanded', 'false');
-    });
-}
 
 /* Custom Cursor Glow */
 .cursor-glow {
     position: fixed;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(148, 37, 37, 0.04) 0%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
 }
 
 /* ==========================================================================
@@ -347,10 +332,11 @@ if (mobileNavToggle && navMenu && navOverlay) {
 
 .header.scrolled {
     padding: 1.1rem 0;
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    background: rgba(245, 240, 230, 0.92);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 4px 30px rgba(59, 10, 10, 0.03);
 }
 
 .navbar {
@@ -413,14 +399,14 @@ if (mobileNavToggle && navMenu && navOverlay) {
 .btn-nav-cta {
     padding: 0.65rem 1.5rem;
     font-size: 0.75rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    border: 1px solid var(--text-white);
     color: var(--text-white);
 }
 
 .btn-nav-cta:hover {
     background: var(--gold);
-    color: var(--bg-darker);
+    color: #f5f0e6;
     border-color: var(--gold);
 }
 
@@ -453,7 +439,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-dark);
+    background: var(--bg-gradient);
     overflow: hidden;
 }
 
@@ -499,7 +485,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
     position: absolute;
     width: 160%;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.12), rgba(108, 59, 255, 0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(148, 37, 37, 0.08), rgba(59, 10, 10, 0.06), transparent);
     transform: rotate(-12deg);
 }
 
@@ -1254,10 +1240,10 @@ if (mobileNavToggle && navMenu && navOverlay) {
     opacity: 0.7;
 }
 
-.color-grad-1 { background: linear-gradient(135deg, #101010 0%, #1e152d 100%); }
-.color-grad-2 { background: linear-gradient(135deg, #101010 0%, #291c10 100%); }
-.color-grad-3 { background: linear-gradient(135deg, #101010 0%, #102428 100%); }
-.color-grad-4 { background: linear-gradient(135deg, #101010 0%, #200d28 100%); }
+.color-grad-1 { background: linear-gradient(135deg, #f5f0e6 0%, #ecdcd0 100%); }
+.color-grad-2 { background: linear-gradient(135deg, #f5f0e6 0%, #e2d1c3 100%); }
+.color-grad-3 { background: linear-gradient(135deg, #f5f0e6 0%, #dfd4c6 100%); }
+.color-grad-4 { background: linear-gradient(135deg, #f5f0e6 0%, #e8dbcd 100%); }
 
 /* Elegant CMS Portfolio Placeholder Cards */
 .portfolio-placeholder-card {
@@ -1267,9 +1253,9 @@ if (mobileNavToggle && navMenu && navOverlay) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px dashed rgba(212, 175, 55, 0.15);
+    border: 1px dashed rgba(148, 37, 37, 0.2);
     border-radius: 4px;
-    background: rgba(10, 10, 10, 0.4);
+    background: rgba(245, 240, 230, 0.5);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
@@ -1277,8 +1263,8 @@ if (mobileNavToggle && navMenu && navOverlay) {
 
 .portfolio-item:hover .portfolio-placeholder-card {
     border-color: var(--gold);
-    background: rgba(16, 16, 16, 0.75);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.04);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-hover);
 }
 
 .placeholder-category {
@@ -1647,7 +1633,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: var(--bg-dark);
+    background: var(--bg-darker);
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
@@ -1838,8 +1824,8 @@ if (mobileNavToggle && navMenu && navOverlay) {
 }
 
 .form-group input, .form-group select, .form-group textarea {
-    background: rgba(255, 255, 255, 0.01);
-    border: 1px solid var(--border-color);
+    background: #ffffff;
+    border: 1px solid rgba(59, 10, 10, 0.12);
     padding: 1rem 1.25rem;
     border-radius: 4px;
     color: var(--text-white);
@@ -1848,14 +1834,14 @@ if (mobileNavToggle && navMenu && navOverlay) {
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    background: rgba(255, 255, 255, 0.03);
+    background: #ffffff;
     border-color: var(--gold);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.04);
+    box-shadow: 0 0 15px var(--gold-glow);
 }
 
 .form-group select option {
-    background-color: #101010;
-    color: var(--text-white);
+    background-color: #ffffff;
+    color: #3b0a0a;
 }
 
 .form-submit-buttons {
@@ -1871,8 +1857,14 @@ if (mobileNavToggle && navMenu && navOverlay) {
    FOOTER
    ========================================================================== */
 .footer {
+    --bg-darker: #3b0a0a;         /* Keep Deep Burgundy background */
+    --text-white: #f5f0e6;        /* Light Ivory headings */
+    --text-light: #e5e0d8;        /* Light Ivory body */
+    --text-muted: #bdaea6;        /* Muted warm beige */
+    --gold: #942525;              /* Crimson links/accents */
     background-color: var(--bg-darker);
-    border-top: 1px solid var(--border-color);
+    color: var(--text-light);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 6rem;
     position: relative;
     z-index: 2;
@@ -2022,7 +2014,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
     height: 52px;
     border-radius: 50%;
     background: #25D366;
-    color: var(--text-white);
+    color: #ffffff; /* Solid white icon */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2040,13 +2032,13 @@ if (mobileNavToggle && navMenu && navOverlay) {
 .whatsapp-tooltip {
     position: absolute;
     left: 68px;
-    background: rgba(5, 5, 5, 0.95);
+    background: #ffffff; /* Light background */
     border: 1px solid var(--border-color);
     padding: 0.45rem 1rem;
     border-radius: 4px;
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--text-white);
+    color: var(--text-white); /* Deep Burgundy text */
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
@@ -2301,7 +2293,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(5, 5, 5, 0.6);
+        background: rgba(59, 10, 10, 0.4);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         opacity: 0;
@@ -2320,7 +2312,7 @@ if (mobileNavToggle && navMenu && navOverlay) {
         width: 70%;
         max-width: 320px;
         height: 100vh;
-        background-color: rgba(15, 15, 15, 0.98);
+        background-color: rgba(245, 240, 230, 0.98);
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
         z-index: 99;
