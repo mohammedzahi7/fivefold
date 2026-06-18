@@ -48,25 +48,25 @@
     <!-- Header Navigation -->
     <header class="header" id="header">
         <div class="container navbar">
-            <a href="#hero" class="logo" id="navLogo">
+            <a href="./" class="logo" id="navLogo">
                 <img src="assets/logo.png" alt="FiveFold Logo">
                 <span>fivefold<span class="gold-text">.productions</span></span>
             </a>
 
             <nav class="nav-menu" id="navMenu">
                 <ul>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#why-us" class="nav-link">Why FiveFold</a></li>
-                    <li><a href="#team" class="nav-link">Team</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#portfolio" class="nav-link">Work</a></li>
-                    <li><a href="#process" class="nav-link">Process</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="./" class="nav-link active">Home</a></li>
+                    <li><a href="about/" class="nav-link">About</a></li>
+                    <li><a href="services/" class="nav-link">Services</a></li>
+                    <li><a href="portfolio/" class="nav-link">Work</a></li>
+                    <li><a href="team/" class="nav-link">Team</a></li>
+                    <li><a href="process/" class="nav-link">Process</a></li>
+                    <li><a href="contact/" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
-                <a href="#contact" class="btn btn-nav-cta">Contact Us <i class="fas fa-arrow-right"
+                <a href="contact/" class="btn btn-nav-cta">Contact Us <i class="fas fa-arrow-right"
                         style="margin-left: 6px; font-size: 0.75rem;"></i></a>
                 <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
                     <span class="bar"></span>
@@ -100,8 +100,8 @@
                 commercial products, and creator assets into cinematic-grade visual narratives.
             </p>
             <div class="hero-cta-buttons reveal-fade">
-                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-                <a href="#contact" class="btn btn-secondary">Book a Consultation</a>
+                <a href="portfolio/" class="btn btn-primary">View Portfolio</a>
+                <a href="contact/" class="btn btn-secondary">Book a Consultation</a>
             </div>
         </div>
 
@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Company Introduction (Brief About Section) -->
     <section class="about section-padding" id="about">
         <!-- Background element pentagon grid line -->
         <div class="about-pentagon-outline"></div>
@@ -122,459 +122,82 @@
             <div class="section-header text-center">
                 <span class="subtitle-badge">Who We Are</span>
                 <h2 class="section-title">Visual Stories That Build Brands</h2>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
+                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="about-grid">
-                <div class="about-text-column reveal-left">
+                <div class="about-text-column reveal-left" style="grid-column: span 2; text-align: center; max-w: 800px; margin: 0 auto;">
                     <p class="lead-paragraph">
                         FiveFold Productions is a creative production company dedicated to transforming ideas into
                         powerful visual stories. We combine strategy, creativity, and production excellence to help
                         brands connect with their audience and drive results.
                     </p>
-                    <p class="body-paragraph">
+                    <p class="body-paragraph" style="margin-bottom: 2rem;">
                         We serve leading brands and creators both nationally and internationally from our base in
                         Kannur, Kerala. Through high-end commercial campaigns, corporate films, and rapid-delivery
-                        social assets, we create custom content ecosystems that do not just look expensive, but deliver
-                        measurable visual authority.
+                        social assets, we create custom content ecosystems that deliver measurable visual authority.
                     </p>
-                    <div class="about-cta">
-                        <a href="#contact" class="btn-text">Let's create together <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="about-stats-column reveal-right">
-                    <div class="stats-grid">
-                        <div class="stat-card glass-panel">
-                            <h3 class="stat-number" data-target="6">0</h3>
-                            <p class="stat-label">Creative Specialists</p>
-                        </div>
-                        <div class="stat-card glass-panel">
-                            <h3 class="stat-number" data-target="100">0</h3>
-                            <p class="stat-label">Projects Completed</p>
-                        </div>
-                        <div class="stat-card glass-panel">
-                            <h3 class="stat-number" data-target="10">0</h3>
-                            <p class="stat-label">Service Pillars</p>
-                        </div>
-                        <div class="stat-card glass-panel">
-                            <div class="stat-icon-label"><i class="fas fa-shield-halved"></i></div>
-                            <h3 class="stat-location">KERALA</h3>
-                            <p class="stat-label">Studio Location</p>
-                        </div>
+                    <div class="about-cta" style="display: flex; justify-content: center; gap: 1.5rem; align-items: center;">
+                        <a href="about/" class="btn btn-primary">Learn Our Story</a>
+                        <a href="contact/" class="btn-text">Let's create together <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why FiveFold Brand Philosophy (New Section) -->
-    <section class="why-fivefold section-padding" id="why-fivefold">
+    <!-- Featured Services (Condense of Services) -->
+    <section class="services section-padding" id="featured-services" style="background: #942525;">
         <div class="container">
             <div class="section-header text-center">
-                <span class="subtitle-badge">Brand Philosophy</span>
-                <h2 class="section-title">Why FiveFold?</h2>
-                <p class="section-subtitle">Our name defines our methodology. We double down on five core pillars to
-                    multiply creative impact for your brand.</p>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <div class="pillars-grid">
-                <!-- Pillar 1: Strategy -->
-                <div class="pillar-card glass-panel reveal-up">
-                    <div class="pillar-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
-                            <path d="M12 6v6l4 2" />
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">1. Strategy</h3>
-                    <p class="pillar-desc">Analyzing target audience, narrative blueprints, distribution vectors, and
-                        visual alignment goals before a single camera rolls.</p>
-                </div>
-
-                <!-- Pillar 2: Creativity -->
-                <div class="pillar-card glass-panel reveal-up">
-                    <div class="pillar-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">2. Creativity</h3>
-                    <p class="pillar-desc">Custom conceptual storyboards, bespoke color styling palettes, and premium
-                        lighting textures tailored for distinct brand emotional hooks.</p>
-                </div>
-
-                <!-- Pillar 3: Production -->
-                <div class="pillar-card glass-panel reveal-up">
-                    <div class="pillar-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
-                            <line x1="7" y1="2" x2="7" y2="22" />
-                            <line x1="17" y1="2" x2="17" y2="22" />
-                            <line x1="2" y1="12" x2="22" y2="12" />
-                            <line x1="2" y1="7" x2="7" y2="7" />
-                            <line x1="2" y1="17" x2="7" y2="17" />
-                            <line x1="17" y1="17" x2="22" y2="17" />
-                            <line x1="17" y1="7" x2="22" y2="7" />
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">3. Production</h3>
-                    <p class="pillar-desc">Cinema-grade capture rigs, high-altitude drone maneuvers, and professional
-                        sound environments managed by full-time technicians.</p>
-                </div>
-
-                <!-- Pillar 4: Innovation -->
-                <div class="pillar-card glass-panel reveal-up">
-                    <div class="pillar-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                            <polygon points="2 17 12 22 22 17" />
-                            <polyline points="2 12 12 17 22 12" />
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">4. Innovation</h3>
-                    <p class="pillar-desc">Rapid short-form mobile setups, sound effect synching, viral hook structures,
-                        and AI-assisted workflow optimizations.</p>
-                </div>
-
-                <!-- Pillar 5: Impact -->
-                <div class="pillar-card glass-panel reveal-up">
-                    <div class="pillar-icon-wrapper">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                            <polyline points="16 7 22 7 22 13" />
-                        </svg>
-                    </div>
-                    <h3 class="pillar-title">5. Impact</h3>
-                    <p class="pillar-desc">Delivering content designed to raise brand recognition, capture conversions,
-                        and build long-term digital authority.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Redesigned Team Section (Horizontal Swiper) -->
-    <!-- Redesigned Meet Our Team Section -->
-    <section class="team section-padding" id="team">
-        <div class="container">
-            <div class="team-header-container">
-                <div class="section-header" style="text-align:center; width: 100%;">
-                    <span class="subtitle-badge">MEET THE TEAM</span>
-                    <h2 class="section-title">The creative minds behind FiveFold Productions.</h2>
-                    <p class="section-subtitle">Strategy, storytelling, cinematography, editing, branding, and content
-                        production under one roof.</p>
-                    <div class="divider" style="width: 80px; height: 3px; background: var(--gold); margin: 1rem auto;">
-                    </div>
-                </div>
-            </div>
-
-            <div class="team-slider-container">
-                <div class="team-slider-track-wrapper">
-                    <div class="team-slider" id="teamSlider">
-                        <!-- MEMBER 01 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/sahil_new.jpg" alt="Mohammed Sahil" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 01</span>
-                                <h3 class="team-name">Mohammed Sahil</h3>
-                                <span class="team-tag gold-text">Director of Photography & Editor</span>
-                                <p class="team-bio">Responsible for visual storytelling, cinematography, camera
-                                    operations, and creative video production.</p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>Cinematography</li>
-                                        <li>Camera Operation</li>
-                                        <li>Lighting Design</li>
-                                        <li>Video Editing</li>
-                                        <li>Color Correction</li>
-                                        <li>Storytelling</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER 02 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/member_3.jpg" alt="Akif Anis" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 02</span>
-                                <h3 class="team-name">Akif Anis</h3>
-                                <span class="team-tag gold-text">Social Media Content Director</span>
-                                <p class="team-bio">Crafts engaging social content, reels, trends research, and
-                                    rapid‑turnaround editing.</p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>Content Strategy</li>
-                                        <li>Instagram Marketing</li>
-                                        <li>Social Media Campaigns</li>
-
-                                        <li>Audience Growth</li>
-                                        <li>Brand Positioning</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER 03 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/member_2.jpg" alt="Shazin Rafi" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 03</span>
-                                <h3 class="team-name">Shazin Rafi</h3>
-                                <span class="team-tag gold-text">Visual Stylist & Lead Colorist</span>
-                                <p class="team-bio">Defines visual aesthetics, color grading, and premium brand styling.
-                                </p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>Color Grading</li>
-                                        <li>Visual Styling</li>
-                                        <li>Creative Direction</li>
-                                        <li>Mood Development</li>
-                                        <li>Film Look Creation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER 04 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/member_4.jpg" alt="Adhil Azeez" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 04</span>
-                                <h3 class="team-name">Adhil Azeez</h3>
-                                <span class="team-tag gold-text"> Post‑Production Editor</span>
-                                <p class="team-bio">Manages editing workflows, motion graphics,script writer, and final
-                                    content delivery.</p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>Advanced Editing</li>
-                                        <li>Motion Graphics</li>
-                                        <li>script writer</li>
-                                        <li>Story Assembly</li>
-                                        <li>Timeline Optimization</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER 05 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/member_5.jpg" alt="Muhammed Nazim" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 05</span>
-                                <h3 class="team-name">Muhammed Nazim</h3>
-                                <span class="team-tag gold-text">BTS Lead & Digital Media Editor</span>
-                                <p class="team-bio">Captures behind‑the‑scenes content, creates reels, and produces
-                                    short‑form social media assets.</p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>BTS Documentation</li>
-                                        <li>Reels Creation</li>
-                                        <li>Short Form Editing</li>
-                                        <li>Social Content Production</li>
-                                        <li>Behind The Scenes Coverage</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- MEMBER 06 -->
-                        <div class="team-card premium-card reveal-up" data-tilt>
-                            <div class="team-image-wrapper">
-                                <img src="assets/zahi_new.jpg" alt="Mohammed Zahi" class="team-image" />
-                            </div>
-                            <div class="team-info">
-                                <span class="team-number">MEMBER 06</span>
-                                <h3 class="team-name">Mohammed Zahi</h3>
-                                <span class="team-tag gold-text">Managing Director</span>
-                                <p class="team-bio">Leads business strategy, client acquisition, partnerships, and
-                                    company growth initiatives.</p>
-                                <div class="team-skills">
-                                    <strong>Core Skills:</strong>
-                                    <ul>
-                                        <li>Business Development</li>
-                                        <li>Client Relations</li>
-                                        <li>Strategic Planning</li>
-                                        <li>Project Management</li>
-                                        <li>Brand Growth</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slider Navigation controls -->
-                <div class="team-slider-controls">
-                    <button class="slider-arrow prev" id="teamPrev" aria-label="Previous Team Member"><i
-                            class="fas fa-chevron-left"></i></button>
-                    <div class="slider-dots" id="teamDots">
-                        <span class="dot active" data-slide="0"></span>
-                        <span class="dot" data-slide="1"></span>
-                        <span class="dot" data-slide="2"></span>
-                        <span class="dot" data-slide="3"></span>
-                        <span class="dot" data-slide="4"></span>
-                        <span class="dot" data-slide="5"></span>
-                    </div>
-                    <button class="slider-arrow next" id="teamNext" aria-label="Next Team Member"><i
-                            class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="team-tagline-container reveal-fade">
-                <p class="team-tagline gold-text">Together, we create visual stories that inspire and connect.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services section-padding" id="services">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="subtitle-badge">What We Do</span>
-                <h2 class="section-title">Our Production Expertise</h2>
-                <p class="section-subtitle">We deliver premium content assets that capture attention and drive business
-                    conversions.</p>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
+                <span class="subtitle-badge">Our Focus</span>
+                <h2 class="section-title">Core Production Pillars</h2>
+                <p class="section-subtitle">We design premium content assets designed to capture conversions and raise brand recognition.</p>
+                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="services-grid">
                 <!-- 1. Commercial Advertisements -->
                 <div class="service-card glass-panel reveal-up">
                     <div class="service-icon"><i class="fas fa-ad"></i></div>
-                    <h3 class="service-title">Commercial Advertisements</h3>
-                    <p class="service-desc">High-production commercials designed for TV, cinema, and digital campaigns
-                        that represent your brand premiumly.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
+                    <h3 class="service-title">Commercial Campaigns</h3>
+                    <p class="service-desc">High-production commercials designed for TV, cinema, and digital campaigns that represent your brand premiumly.</p>
+                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
                 </div>
 
                 <!-- 2. Brand Films -->
                 <div class="service-card glass-panel reveal-up">
                     <div class="service-icon"><i class="fas fa-film"></i></div>
-                    <h3 class="service-title">Brand Films</h3>
-                    <p class="service-desc">Narrative-driven films that communicate your values, heritage, and unique
-                        mission statement dynamically.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
+                    <h3 class="service-title">Brand Story Films</h3>
+                    <p class="service-desc">Narrative-driven films that communicate your values, heritage, and unique mission statement dynamically.</p>
+                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
                 </div>
 
                 <!-- 3. Social Media Reels -->
                 <div class="service-card glass-panel reveal-up">
                     <div class="service-icon"><i class="fab fa-tiktok"></i></div>
-                    <h3 class="service-title">Social Media Reels</h3>
-                    <p class="service-desc">Fast-paced, hook-driven vertical videos optimized for TikTok, Instagram
-                        Reels, and YouTube Shorts algorithms.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
+                    <h3 class="service-title">Social Content Ecosystems</h3>
+                    <p class="service-desc">Fast-paced, hook-driven vertical videos optimized for TikTok, Instagram Reels, and YouTube Shorts algorithms.</p>
+                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
                 </div>
+            </div>
 
-                <!-- 4. Product Photography -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-box-open"></i></div>
-                    <h3 class="service-title">Product Photography</h3>
-                    <p class="service-desc">Studio-lit high-resolution macro imagery highlighting fine details of your
-                        merchandise for web and catalogs.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 5. Event Coverage -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
-                    <h3 class="service-title">Event Coverage</h3>
-                    <p class="service-desc">Multi-cam documentation of corporate summits, high-profile weddings,
-                        launches, and massive cultural ceremonies.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 6. Corporate Videos -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-briefcase"></i></div>
-                    <h3 class="service-title">Corporate Videos</h3>
-                    <p class="service-desc">Internal training media, company histories, investor pitches, and team
-                        summaries executed professionally.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 7. Drone Videography -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-helicopter"></i></div>
-                    <h3 class="service-title">Drone Videography</h3>
-                    <p class="service-desc">4K aerial footage providing stunning architectural, scale, and environmental
-                        perspectives of your assets.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 8. YouTube Production -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fab fa-youtube"></i></div>
-                    <h3 class="service-title">YouTube Production</h3>
-                    <p class="service-desc">Complete support covering scripting, production setup, professional editing,
-                        thumbnails, and upload strategy.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 9. Content Strategy -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 class="service-title">Content Strategy</h3>
-                    <p class="service-desc">Defining target audiences, distribution formats, content schedules, and
-                        analytics tracking structures.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
-
-                <!-- 10. Personal Branding -->
-                <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
-                    <h3 class="service-title">Personal Branding</h3>
-                    <p class="service-desc">Curating key visual portfolios, speaking reels, and expert interviews for
-                        executives, founders, and creators.</p>
-                    <a href="#contact" class="service-link">Inquire Now <i class="fas fa-chevron-right"></i></a>
-                </div>
+            <div style="text-align: center; margin-top: 3.5rem;">
+                <a href="services/" class="btn btn-primary">View All 10 Service Pillars</a>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio section-padding" id="portfolio">
+    <!-- Featured Projects (Condense of Portfolio) -->
+    <section class="portfolio section-padding" id="featured-portfolio">
         <div class="container">
             <div class="section-header text-center">
                 <span class="subtitle-badge">Our Creations</span>
-                <h2 class="section-title">Selected Works</h2>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
+                <h2 class="section-title">Featured Works</h2>
+                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
-            <!-- Portfolio Navigation Category Filters -->
-            <div class="portfolio-filters" id="portfolioFilters">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="commercial">Commercial</button>
-                <button class="filter-btn" data-filter="corporate">Corporate</button>
-                <button class="filter-btn" data-filter="events">Events</button>
-                <button class="filter-btn" data-filter="photography">Photography</button>
-                <button class="filter-btn" data-filter="social">Social Media</button>
-                <button class="filter-btn" data-filter="drone">Drone</button>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="portfolio-grid" id="portfolioGrid">
-
+            <div class="portfolio-grid" id="portfolioGrid" style="margin-bottom: 3.5rem;">
                 <!-- Project 1 (Commercial) -->
                 <div class="portfolio-item glass-panel filter-item commercial reveal-up">
                     <div class="portfolio-img-wrapper">
@@ -582,8 +205,7 @@
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Commercial</span>
                             <h3 class="project-client">Zenith Luxury Watches</h3>
-                            <p class="project-description">A high-end cinematic product showcase advertisement focusing
-                                on precision mechanics.</p>
+                            <p class="project-description">A high-end cinematic product showcase advertisement focusing on precision mechanics.</p>
                             <button class="btn btn-project-view"
                                 onclick="openProjectModal('Zenith Luxury Watches', 'Commercial', 'assets/portfolio_commercial.png', 'Zenith Luxury Watches commercial captured using macro lens structures, custom camera rig movements, and golden dynamic lighting to represent absolute elegance.')">View
                                 Project</button>
@@ -598,171 +220,43 @@
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Drone Cinematography</span>
                             <h3 class="project-client">Kerala Tourism Board</h3>
-                            <p class="project-description">Stunning misty aerial reels showing the scenic heights of
-                                Western Ghats in Kannur.</p>
+                            <p class="project-description">Stunning misty aerial reels showing the scenic heights of Western Ghats in Kannur.</p>
                             <button class="btn btn-project-view"
                                 onclick="openProjectModal('Kerala Tourism Board', 'Drone', 'assets/portfolio_drone.png', 'A beautiful documentary piece capturing Kerala\'s misty hills and winding roads during the early sunrise using high-altitude 4K drone cinematography.')">View
                                 Project</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Project 3 (Corporate) -->
-                <div class="portfolio-item glass-panel filter-item corporate reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="portfolio-placeholder-media color-grad-1">
-                            <i class="fas fa-building media-icon"></i>
-                            <span>Corporate Showcase</span>
-                        </div>
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Corporate</span>
-                            <h3 class="project-client">Malabar Tech Hub</h3>
-                            <p class="project-description">A corporate growth film highlighting office culture, campus
-                                infrastructure, and visionary management.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('Malabar Tech Hub', 'Corporate', '', 'Malabar Tech Hub corporate profile film, showcasing modern workspace integration, key developer interviews, and cinematic walk-throughs.')">View
-                                Project</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 (Events) -->
-                <div class="portfolio-item glass-panel filter-item events reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="portfolio-placeholder-media color-grad-2">
-                            <i class="fas fa-glass-cheers media-icon"></i>
-                            <span>Royal Union Event</span>
-                        </div>
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Events</span>
-                            <h3 class="project-client">The Royal Union Wedding</h3>
-                            <p class="project-description">Premium coverage capturing candid expressions, traditional
-                                rituals, and grand night highlights.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('The Royal Union Wedding', 'Events', '', 'Grand wedding coverage incorporating multi-camera stabilizers, fast short-cut highlight editing, and customized sound themes.')">View
-                                Project</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 (Photography) -->
-                <div class="portfolio-item glass-panel filter-item photography reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="portfolio-placeholder-media color-grad-3">
-                            <i class="fas fa-camera-retro media-icon"></i>
-                            <span>Aura Fashion Shoot</span>
-                        </div>
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Photography</span>
-                            <h3 class="project-client">Aura Fashion Label</h3>
-                            <p class="project-description">High-contrast outdoor catalog shots utilizing premium camera
-                                sensors and natural lighting setups.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('Aura Fashion Label', 'Photography', '', 'Aura Fashion outdoor model catalog shoot focusing on colors, micro-textures, and high shadow gradients.')">View
-                                Project</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 (Social Media) -->
-                <div class="portfolio-item glass-panel filter-item social reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="portfolio-placeholder-media color-grad-4">
-                            <i class="fab fa-instagram-square media-icon"></i>
-                            <span>Spicy Kitchen Reels</span>
-                        </div>
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Social Media</span>
-                            <h3 class="project-client">Spicy Kitchen Restaurant</h3>
-                            <p class="project-description">High-energy viral food assembly reels generating over 500k
-                                impressions on Instagram.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('Spicy Kitchen Restaurant', 'Social Media', '', 'Social media launch campaign covering high-intensity closeups of sizzling dishes, sound effects sync, and fast transitions.')">View
-                                Project</button>
-                        </div>
-                    </div>
-                </div>
-
+            <div style="text-align: center;">
+                <a href="portfolio/" class="btn btn-primary">Browse Complete Work Gallery</a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
-    <section class="why-us section-padding" id="why-us">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="subtitle-badge">Our Edge</span>
-                <h2 class="section-title">Why Choose FiveFold Productions</h2>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <div class="why-us-grid">
-                <!-- 1. Creative Excellence -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-paint-brush"></i></div>
-                    <h3 class="why-title">Creative Excellence</h3>
-                    <p class="why-desc">We do not copy templates. Every project receives unique frames, distinct color
-                        palettes, and curated narratives tailored for impact.</p>
-                </div>
-
-                <!-- 2. Professional Equipment -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-sliders-h"></i></div>
-                    <h3 class="why-title">Professional Equipment</h3>
-                    <p class="why-desc">Filming with cinema cameras, top-tier stabilizers, professional drone
-                        configurations, and crisp audio capture hardware.</p>
-                </div>
-
-                <!-- 3. Fast Delivery -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-bolt"></i></div>
-                    <h3 class="why-title">Fast Delivery</h3>
-                    <p class="why-desc">Strict scheduling guarantees delivery on time. Our workflows keep
-                        post-production timelines tight and reliable.</p>
-                </div>
-
-                <!-- 4. Brand-Focused Approach -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-bullseye"></i></div>
-                    <h3 class="why-title">Brand-Focused</h3>
-                    <p class="why-desc">We balance gorgeous visuals with marketing strategy. We ensure every frame
-                        builds client trust and drives campaign conversions.</p>
-                </div>
-
-                <!-- 5. Experienced Team -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-users"></i></div>
-                    <h3 class="why-title">Experienced Team</h3>
-                    <p class="why-desc">6 highly specialized creatives working in lockstep across direction, audio,
-                        filming, editing, and strategy.</p>
-                </div>
-
-                <!-- 6. End-to-End Production -->
-                <div class="why-card glass-panel reveal-up">
-                    <div class="why-icon"><i class="fas fa-cubes"></i></div>
-                    <h3 class="why-title">End-to-End Production</h3>
-                    <p class="why-desc">From the initial script treatment to shooting, editing, final sound design, and
-                        launch support, we manage everything.</p>
-                </div>
-            </div>
+    <!-- Team Preview Teaser -->
+    <section class="team-teaser section-padding" style="background: #942525; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container text-center">
+            <span class="subtitle-badge">The Crew</span>
+            <h2 class="section-title">The Creative Minds Behind FiveFold</h2>
+            <p class="section-subtitle" style="max-w: 600px; margin: 0 auto 2.5rem;">Meet the strategists, cinematographers, visual stylist colorists, and post-production designers executing our projects.</p>
+            <a href="team/" class="btn btn-primary">Meet The Crew & Director</a>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Client Testimonials Section -->
     <section class="testimonials section-padding" id="testimonials">
         <div class="container">
             <div class="section-header text-center">
                 <span class="subtitle-badge">Client Stories</span>
                 <h2 class="section-title">What Brands Say About Us</h2>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
+                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <!-- Slider Wrapper -->
             <div class="testimonial-slider-container reveal-up">
                 <div class="testimonial-slider" id="testimonialSlider">
-
                     <!-- Slide 1 -->
                     <div class="testimonial-slide active">
                         <div class="testimonial-quote-icon"><i class="fas fa-quote-right"></i></div>
@@ -816,7 +310,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- Slider Controls -->
@@ -835,215 +328,15 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process section-padding" id="process">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="subtitle-badge">Workflow</span>
-                <h2 class="section-title">Our Production Timeline</h2>
-                <p class="section-subtitle">How we transform raw concepts into finished cinematic masterpieces.</p>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <!-- Timeline -->
-            <div class="timeline">
-
-                <!-- Step 1 -->
-                <div class="timeline-item reveal-left">
-                    <div class="timeline-number">01</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Discovery</h3>
-                        <p class="timeline-step-desc">We sit together to understand your business goals, target
-                            audience, brand identity, and key messages. This research forms the baseline for the project
-                            narrative.</p>
-                    </div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="timeline-item reveal-right">
-                    <div class="timeline-number">02</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Planning</h3>
-                        <p class="timeline-step-desc">We draft detailed scripts, storyboards, coordinate locations,
-                            assemble casting requirements, and detail technical shot schedules to prevent any production
-                            delay.</p>
-                    </div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="timeline-item reveal-left">
-                    <div class="timeline-number">03</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Production</h3>
-                        <p class="timeline-step-desc">Our production crew hits the set. We coordinate professional
-                            lighting, high-definition camera angles, audio recording, and aerial drone capturing under
-                            creative direction.</p>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="timeline-item reveal-right">
-                    <div class="timeline-number">04</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Editing</h3>
-                        <p class="timeline-step-desc">Raw footage is assembled, color graded to perfection, combined
-                            with customized soundscapes, music license layers, and dynamic text overlays to lock in
-                            viewer attention.</p>
-                    </div>
-                </div>
-
-                <!-- Step 5 -->
-                <div class="timeline-item reveal-left">
-                    <div class="timeline-number">05</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Delivery</h3>
-                        <p class="timeline-step-desc">We output the final visual files in exact aspect ratios optimized
-                            for television, web streaming, or specific vertical social media handles like Instagram and
-                            TikTok.</p>
-                    </div>
-                </div>
-
-                <!-- Step 6 -->
-                <div class="timeline-item reveal-right">
-                    <div class="timeline-number">06</div>
-                    <div class="timeline-content glass-panel">
-                        <h3 class="timeline-step-title">Growth Support</h3>
-                        <p class="timeline-step-desc">We do not just leave you with files. We offer campaign
-                            suggestions, video thumbnail tips, and track performance data to make your next campaign run
-                            even better.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section-padding" id="contact">
-        <div class="container">
-            <div class="section-header text-center">
-                <span class="subtitle-badge">Get In Touch</span>
-                <h2 class="section-title">Let's Create Stories Together</h2>
-                <p class="section-subtitle">Reach out today for a personalized quote or to schedule a meeting with our
-                    creative director.</p>
-                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span>
-                </div>
-            </div>
-
-            <div class="contact-wrapper">
-
-                <!-- Contact Info Panel -->
-                <div class="contact-info-panel glass-panel reveal-left">
-                    <div>
-                        <h3 class="info-panel-title">FiveFold Productions</h3>
-                        <p class="info-panel-desc">Ready to scale your business visual impact? Drop us a message or
-                            schedule a physical consultation at our production hub in Kerala.</p>
-                    </div>
-
-                    <ul class="info-details-list">
-                        <li>
-                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="info-text">
-                                <h4>Location</h4>
-                                <p>Kannur, Kerala, India - 670001</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="info-text">
-                                <h4>Email</h4>
-                                <p><a href="mailto:workwithfivefold@gmail.com">workwithfivefold@gmail.com</a></p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
-                            <div class="info-text">
-                                <h4>WhatsApp Chat</h4>
-                                <p><a href="https://wa.me/919400531192" target="_blank">+91 9400531192</a></p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="social-connect-block">
-                        <h4>Connect Socially</h4>
-                        <div class="social-links">
-                            <a href="https://instagram.com/fivefoldproductions" target="_blank"
-                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com/company/fivefoldproductions" target="_blank"
-                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://youtube.com/fivefoldproductions" target="_blank" aria-label="YouTube"><i
-                                    class="fab fa-youtube"></i></a>
-                            <a href="https://facebook.com/fivefoldproductions" target="_blank" aria-label="Facebook"><i
-                                    class="fab fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form Panel -->
-                <div class="contact-form-panel glass-panel reveal-right">
-                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="formName">Full Name *</label>
-                                <input type="text" id="formName" name="name" placeholder="John Doe" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formPhone">Phone Number *</label>
-                                <input type="tel" id="formPhone" name="phone" placeholder="+91 98765 43210" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formEmail">Email Address *</label>
-                                <input type="email" id="formEmail" name="email" placeholder="john@company.com" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formCompany">Company Name</label>
-                                <input type="text" id="formCompany" name="company" placeholder="Example Corp">
-                            </div>
-                            <div class="form-group select-group">
-                                <label for="formService">Service Required *</label>
-                                <select id="formService" name="service" required>
-                                    <option value="" disabled selected>Select a Service</option>
-                                    <option value="Commercial Ads">Commercial Advertisements</option>
-                                    <option value="Brand Films">Brand Films</option>
-                                    <option value="Social Media Reels">Social Media Reels</option>
-                                    <option value="Product Photography">Product Photography</option>
-                                    <option value="Event Coverage">Event Coverage</option>
-                                    <option value="Corporate Videos">Corporate Videos</option>
-                                    <option value="Drone Videography">Drone Videography</option>
-                                    <option value="YouTube Production">YouTube Production</option>
-                                    <option value="Content Strategy">Content Strategy</option>
-                                    <option value="Personal Branding">Personal Branding</option>
-                                </select>
-                            </div>
-                            <div class="form-group select-group">
-                                <label for="formBudget">Budget Range (INR) *</label>
-                                <select id="formBudget" name="budget" required>
-                                    <option value="" disabled selected>Select Budget Scope</option>
-                                    <option value="Below ₹50,000">Below ₹50,000</option>
-                                    <option value="₹50,000 - ₹1,50,000">₹50,000 - ₹1,50,000</option>
-                                    <option value="₹1,50,000 - ₹5,00,000">₹1,50,000 - ₹5,00,000</option>
-                                    <option value="Above ₹5,00,000">Above ₹5,00,000 (National Campaign)</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group full-width">
-                            <label for="formMessage">Message Details *</label>
-                            <textarea id="formMessage" name="message" rows="5"
-                                placeholder="Tell us about your project goals, timelines, and visual references..."
-                                required></textarea>
-                        </div>
-
-                        <div class="form-submit-buttons">
-                            <button type="submit" class="btn btn-primary" id="btnSubmitForm">Submit Inquiry</button>
-                            <button type="button" class="btn btn-secondary" onclick="triggerWhatsAppConsultation()">
-                                <i class="fab fa-whatsapp"></i> Chat On WhatsApp
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
+    <!-- Home Call to Action Banner -->
+    <section class="cta-banner section-padding" style="background: #942525; border-top: 1px solid var(--border-color);">
+        <div class="container text-center reveal-up">
+            <span class="subtitle-badge">Collaborate With Us</span>
+            <h2 class="section-title">Let's Create Stories Together</h2>
+            <p class="section-subtitle" style="max-w: 600px; margin: 0 auto 2.5rem;">Have a project concept in mind? Book a consultation directly with our management team or get a custom project quote.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <a href="contact/" class="btn btn-primary">Start Your Inquiry</a>
+                <a href="https://wa.me/919400531192" target="_blank" class="btn btn-secondary"><i class="fab fa-whatsapp"></i> Chat On WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1052,7 +345,7 @@
     <footer class="footer">
         <div class="container footer-top">
             <div class="footer-col brand-col">
-                <a href="#hero" class="logo">
+                <a href="./" class="logo">
                     <img src="assets/logo.png" alt="FiveFold Logo">
                     <span>fivefold<span class="gold-text">.productions</span></span>
                 </a>
@@ -1073,25 +366,25 @@
             <div class="footer-col links-col">
                 <h4>Quick Navigation</h4>
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#why-fivefold">Why FiveFold</a></li>
-                    <li><a href="#team">Our Team</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#portfolio">Selected Portfolio</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="about/">About Us</a></li>
+                    <li><a href="services/">Our Services</a></li>
+                    <li><a href="portfolio/">Selected Portfolio</a></li>
+                    <li><a href="team/">Our Team</a></li>
+                    <li><a href="process/">Process</a></li>
+                    <li><a href="contact/">Contact Us</a></li>
                 </ul>
             </div>
 
             <div class="footer-col services-col">
                 <h4>Core Specialties</h4>
                 <ul>
-                    <li><a href="#services">Commercial Campaigns</a></li>
-                    <li><a href="#services">Corporate Films</a></li>
-                    <li><a href="#services">Social Reels & Shorts</a></li>
-                    <li><a href="#services">Product Shoots</a></li>
-                    <li><a href="#services">Drone Cinematography</a></li>
-                    <li><a href="#services">Personal Branding</a></li>
+                    <li><a href="services/">Commercial Campaigns</a></li>
+                    <li><a href="services/">Corporate Films</a></li>
+                    <li><a href="services/">Social Reels & Shorts</a></li>
+                    <li><a href="services/">Product Shoots</a></li>
+                    <li><a href="services/">Drone Cinematography</a></li>
+                    <li><a href="services/">Personal Branding</a></li>
                 </ul>
             </div>
 
@@ -1128,44 +421,21 @@
         <span class="whatsapp-tooltip">Chat with us</span>
     </a>
 
-    <!-- Project Detail Modal (For Premium Interactive Portfolio Grid) -->
+    <!-- Project Detail Modal -->
     <div class="modal" id="projectModal">
         <div class="modal-content glass-panel">
             <span class="close-modal" onclick="closeProjectModal()">&times;</span>
             <div class="modal-body">
                 <div class="modal-media-container" id="modalMedia">
-                    <!-- Dynamic Media (Image or Placeholder Gradient) -->
+                    <!-- Dynamic Media -->
                 </div>
                 <div class="modal-info-container">
                     <span class="modal-tag" id="modalTag">Category</span>
                     <h3 class="modal-title" id="modalTitle">Project Name</h3>
                     <p class="modal-desc" id="modalDesc">Detailed description of project challenges, visual styles, and
                         delivery specs.</p>
-                    <a href="#contact" class="btn btn-primary" onclick="closeProjectModal()">Discuss Similar Project</a>
+                    <a href="contact/" class="btn btn-primary" onclick="closeProjectModal()">Discuss Similar Project</a>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Form Success/Booking Overlay Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content glass-panel success-modal-content">
-            <span class="close-modal" onclick="closeSuccessModal()">&times;</span>
-            <div class="success-header text-center">
-                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
-                <h3 class="modal-title">Inquiry Submitted Successfully!</h3>
-                <p>Thank you for reaching out. We have logged your request details below.</p>
-            </div>
-            <div class="success-summary-card" id="successSummaryCard">
-                <!-- Dynamic summary elements -->
-            </div>
-            <div class="success-actions text-center">
-                <p class="success-subtext">Want an instant response? Forward this summary directly to our WhatsApp
-                    support team!</p>
-                <button class="btn btn-primary" id="btnForwardWhatsApp">
-                    <i class="fab fa-whatsapp"></i> Send Summary via WhatsApp
-                </button>
-                <button class="btn btn-secondary" onclick="closeSuccessModal()">Close</button>
             </div>
         </div>
     </div>

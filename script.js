@@ -2,21 +2,27 @@
 // CUSTOM CURSOR GLOW EFFECT
 // ==========================================================================
 const cursorGlow = document.getElementById('cursorGlow');
-document.addEventListener('mousemove', (e) => {
-    cursorGlow.style.left = `${e.clientX}px`;
-    cursorGlow.style.top = `${e.clientY}px`;
-});
+if (cursorGlow) {
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = `${e.clientX}px`;
+        cursorGlow.style.top = `${e.clientY}px`;
+    });
+}
 
 // Add scaling glow when hovering interactive elements
 const interactives = document.querySelectorAll('a, button, .team-card, .service-card, .pillar-card, .portfolio-item, .filter-btn, input, select, textarea');
 interactives.forEach(el => {
     el.addEventListener('mouseenter', () => {
-        cursorGlow.style.width = '350px';
-        cursorGlow.style.height = '350px';
+        if (cursorGlow) {
+            cursorGlow.style.width = '350px';
+            cursorGlow.style.height = '350px';
+        }
     });
     el.addEventListener('mouseleave', () => {
-        cursorGlow.style.width = '250px';
-        cursorGlow.style.height = '250px';
+        if (cursorGlow) {
+            cursorGlow.style.width = '250px';
+            cursorGlow.style.height = '250px';
+        }
     });
 });
 
@@ -70,13 +76,15 @@ const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
     // Add scroll class to navbar
-    if (window.scrollY > 40) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+    if (header) {
+        if (window.scrollY > 40) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
 
-    // Scroll spy: Update active nav links
+    // Scroll spy: Update active nav links for local anchor links only
     let currentSectionId = '';
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
@@ -87,9 +95,12 @@ window.addEventListener('scroll', () => {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${currentSectionId}`) {
-            link.classList.add('active');
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            link.classList.remove('active');
+            if (href === `#${currentSectionId}`) {
+                link.classList.add('active');
+            }
         }
     });
 });
@@ -268,7 +279,7 @@ const startSlideInterval = () => {
     slideInterval = setInterval(nextSlide, 6000);
 };
 
-if (slides.length > 0) {
+if (slides.length > 0 && nextBtn && prevBtn) {
     nextBtn.addEventListener('click', () => {
         nextSlide();
         startSlideInterval();

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio | FiveFold Productions Kerala</title>
+
+    <!-- SEO Optimization Meta Tags -->
+    <meta name="description"
+        content="Browse through our selected photography, videography, commercial campaigns, corporate films, and drone cinematography works completed in Kannur, Kerala.">
+    <meta name="keywords" content="FiveFold Portfolio, Creative Video Showcases, Drone Projects Kerala, Kerala Commercial Photography Gallery">
+    <meta name="author" content="FiveFold Productions">
+    <link rel="canonical" href="https://fivefoldproductions.com/portfolio/">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Custom Animated Cursor Highlight -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Nav overlay backdrop -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="../" class="logo" id="navLogo">
+                <img src="../assets/logo.png" alt="FiveFold Logo">
+                <span>fivefold<span class="gold-text">.productions</span></span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="./" class="nav-link active">Work</a></li>
+                    <li><a href="../team/" class="nav-link">Team</a></li>
+                    <li><a href="../process/" class="nav-link">Process</a></li>
+                    <li><a href="../contact/" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="../contact/" class="btn btn-nav-cta">Contact Us <i class="fas fa-arrow-right"
+                        style="margin-left: 6px; font-size: 0.75rem;"></i></a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Page Hero -->
+    <section class="page-hero">
+        <div class="hero-canvas">
+            <div class="hero-spotlight purple" style="top: -10%; left: 10%;"></div>
+            <div class="hero-spotlight gold" style="bottom: -10%; right: 10%;"></div>
+        </div>
+        <div class="container">
+            <h1 class="page-hero-title">Selected Works</h1>
+            <p class="page-hero-subtitle">A curated collection of commercial campaigns, aerial cinematography, and visual brand assets.</p>
+            <div class="breadcrumbs">
+                <a href="../">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Portfolio</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section class="portfolio section-padding" id="portfolio" style="background: #3b0a0a;">
+        <div class="container">
+            <!-- Portfolio Navigation Category Filters -->
+            <div class="portfolio-filters" id="portfolioFilters" style="margin-bottom: 3.5rem;">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="photography">Photography</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="drone">Drone</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid" id="portfolioGrid">
+
+                <!-- Project 1 (Commercial) -->
+                <div class="portfolio-item glass-panel filter-item commercial reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <img src="../assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img">
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Commercial</span>
+                            <h3 class="project-client">Zenith Luxury Watches</h3>
+                            <p class="project-description">A high-end cinematic product showcase advertisement focusing on precision mechanics.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('Zenith Luxury Watches', 'Commercial', '../assets/portfolio_commercial.png', 'Zenith Luxury Watches commercial captured using macro lens structures, custom camera rig movements, and golden dynamic lighting to represent absolute elegance.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Drone) -->
+                <div class="portfolio-item glass-panel filter-item drone reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <img src="../assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img">
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Drone Cinematography</span>
+                            <h3 class="project-client">Kerala Tourism Board</h3>
+                            <p class="project-description">Stunning misty aerial reels showing the scenic heights of Western Ghats in Kannur.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('Kerala Tourism Board', 'Drone', '../assets/portfolio_drone.png', 'A beautiful documentary piece capturing Kerala\'s misty hills and winding roads during the early sunrise using high-altitude 4K drone cinematography.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 (Corporate) -->
+                <div class="portfolio-item glass-panel filter-item corporate reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-media color-grad-1">
+                            <i class="fas fa-building media-icon"></i>
+                            <span>Corporate Showcase</span>
+                        </div>
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Corporate</span>
+                            <h3 class="project-client">Malabar Tech Hub</h3>
+                            <p class="project-description">A corporate growth film highlighting office culture, campus infrastructure, and visionary management.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('Malabar Tech Hub', 'Corporate', '', 'Malabar Tech Hub corporate profile film, showcasing modern workspace integration, key developer interviews, and cinematic walk-throughs.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 (Events) -->
+                <div class="portfolio-item glass-panel filter-item events reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-media color-grad-2">
+                            <i class="fas fa-glass-cheers media-icon"></i>
+                            <span>Royal Union Event</span>
+                        </div>
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Events</span>
+                            <h3 class="project-client">The Royal Union Wedding</h3>
+                            <p class="project-description">Premium coverage capturing candid expressions, traditional rituals, and grand night highlights.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('The Royal Union Wedding', 'Events', '', 'Grand wedding coverage incorporating multi-camera stabilizers, fast short-cut highlight editing, and customized sound themes.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 (Photography) -->
+                <div class="portfolio-item glass-panel filter-item photography reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-media color-grad-3">
+                            <i class="fas fa-camera-retro media-icon"></i>
+                            <span>Aura Fashion Shoot</span>
+                        </div>
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Photography</span>
+                            <h3 class="project-client">Aura Fashion Label</h3>
+                            <p class="project-description">High-contrast outdoor catalog shots utilizing premium camera sensors and natural lighting setups.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('Aura Fashion Label', 'Photography', '', 'Aura Fashion outdoor model catalog shoot focusing on colors, micro-textures, and high shadow gradients.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 (Social Media) -->
+                <div class="portfolio-item glass-panel filter-item social reveal-up in-view">
+                    <div class="portfolio-img-wrapper">
+                        <div class="portfolio-placeholder-media color-grad-4">
+                            <i class="fab fa-instagram-square media-icon"></i>
+                            <span>Spicy Kitchen Reels</span>
+                        </div>
+                        <div class="portfolio-hover-content">
+                            <span class="project-tag">Social Media</span>
+                            <h3 class="project-client">Spicy Kitchen Restaurant</h3>
+                            <p class="project-description">High-energy viral food assembly reels generating over 500k impressions on Instagram.</p>
+                            <button class="btn btn-project-view"
+                                onclick="openProjectModal('Spicy Kitchen Restaurant', 'Social Media', '', 'Social media launch campaign covering high-intensity closeups of sizzling dishes, sound effects sync, and fast transitions.')">View
+                                Project</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-col brand-col">
+                <a href="../" class="logo">
+                    <img src="../assets/logo.png" alt="FiveFold Logo">
+                    <span>fivefold<span class="gold-text">.productions</span></span>
+                </a>
+                <p class="footer-tagline">Creating stories that move people. We design cinema-grade visual advertising campaigns for leading brands, agencies, and creators globally.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/fivefoldproductions" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://facebook.com/fivefoldproductions" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../about/">About Us</a></li>
+                    <li><a href="../services/">Our Services</a></li>
+                    <li><a href="./">Selected Portfolio</a></li>
+                    <li><a href="../team/">Our Team</a></li>
+                    <li><a href="../process/">Process</a></li>
+                    <li><a href="../contact/">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services-col">
+                <h4>Core Specialties</h4>
+                <ul>
+                    <li><a href="../services/">Commercial Campaigns</a></li>
+                    <li><a href="../services/">Corporate Films</a></li>
+                    <li><a href="../services/">Social Reels & Shorts</a></li>
+                    <li><a href="../services/">Product Shoots</a></li>
+                    <li><a href="../services/">Drone Cinematography</a></li>
+                    <li><a href="../services/">Personal Branding</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col location-col">
+                <h4>Kannur Studio Hub</h4>
+                <p class="footer-address">
+                    FiveFold Productions Studio,<br>
+                    Creative Block, National Highway Road,<br>
+                    Kannur, Kerala, India - 670001
+                </p>
+                <p class="footer-email">
+                    Email: <a href="mailto:workwithfivefold@gmail.com">workwithfivefold@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p class="copyright">&copy; 2026 FiveFold Productions. All Rights Reserved.</p>
+                <p class="designed-by">Designed by Antigravity Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/919400531192?text=Hi%20FiveFold%20Productions%2C%20I%20would%20like%20to%20inquire%20about%20your%20creative%20production%20services."
+        class="whatsapp-float-widget" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Project Detail Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content glass-panel">
+            <span class="close-modal" onclick="closeProjectModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-media-container" id="modalMedia">
+                    <!-- Dynamic Media -->
+                </div>
+                <div class="modal-info-container">
+                    <span class="modal-tag" id="modalTag">Category</span>
+                    <h3 class="modal-title" id="modalTitle">Project Name</h3>
+                    <p class="modal-desc" id="modalDesc">Detailed description of project challenges, visual styles, and delivery specs.</p>
+                    <a href="../contact/" class="btn btn-primary" onclick="closeProjectModal()">Discuss Similar Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="../script.js"></script>
+</body>
+
+</html>

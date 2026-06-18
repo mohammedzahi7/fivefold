@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | FiveFold Productions Kerala</title>
+
+    <!-- SEO Optimization Meta Tags -->
+    <meta name="description"
+        content="Get in touch with FiveFold Productions in Kannur, Kerala. Inquire about services, budget scopes, or book a consultation with our creative director.">
+    <meta name="keywords" content="FiveFold Contact, Book Video Consultation, Media Agency Kannur, Hire Photographer Kerala">
+    <meta name="author" content="FiveFold Productions">
+    <link rel="canonical" href="https://fivefoldproductions.com/contact/">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <!-- Custom Animated Cursor Highlight -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Mobile Nav overlay backdrop -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Header Navigation -->
+    <header class="header" id="header">
+        <div class="container navbar">
+            <a href="../" class="logo" id="navLogo">
+                <img src="../assets/logo.png" alt="FiveFold Logo">
+                <span>fivefold<span class="gold-text">.productions</span></span>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="../" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../services/" class="nav-link">Services</a></li>
+                    <li><a href="../portfolio/" class="nav-link">Work</a></li>
+                    <li><a href="../team/" class="nav-link">Team</a></li>
+                    <li><a href="../process/" class="nav-link">Process</a></li>
+                    <li><a href="./" class="nav-link active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="./" class="btn btn-nav-cta">Contact Us <i class="fas fa-arrow-right"
+                        style="margin-left: 6px; font-size: 0.75rem;"></i></a>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Subpage Page Hero -->
+    <section class="page-hero">
+        <div class="hero-canvas">
+            <div class="hero-spotlight purple" style="top: -10%; left: 10%;"></div>
+            <div class="hero-spotlight gold" style="bottom: -10%; right: 10%;"></div>
+        </div>
+        <div class="container">
+            <h1 class="page-hero-title">Start A Project</h1>
+            <p class="page-hero-subtitle">Get in touch today for custom budgets, narrative outlines, and shoot schedules.</p>
+            <div class="breadcrumbs">
+                <a href="../">Home</a>
+                <span class="separator">/</span>
+                <span class="current">Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact" style="background: #3b0a0a;">
+        <div class="container">
+            <div class="contact-wrapper">
+
+                <!-- Contact Info Panel -->
+                <div class="contact-info-panel glass-panel reveal-left in-view">
+                    <div>
+                        <h3 class="info-panel-title">FiveFold Productions</h3>
+                        <p class="info-panel-desc">Ready to scale your business visual impact? Drop us a message or schedule a physical consultation at our production hub in Kerala.</p>
+                    </div>
+
+                    <ul class="info-details-list">
+                        <li>
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text">
+                                <h4>Location</h4>
+                                <p>Kannur, Kerala, India - 670001</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <h4>Email</h4>
+                                <p><a href="mailto:workwithfivefold@gmail.com">workwithfivefold@gmail.com</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="info-text">
+                                <h4>WhatsApp Chat</h4>
+                                <p><a href="https://wa.me/919400531192" target="_blank">+91 9400531192</a></p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="social-connect-block">
+                        <h4>Connect Socially</h4>
+                        <div class="social-links">
+                            <a href="https://instagram.com/fivefoldproductions" target="_blank"
+                                aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/company/fivefoldproductions" target="_blank"
+                                aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://youtube.com/fivefoldproductions" target="_blank" aria-label="YouTube"><i
+                                    class="fab fa-youtube"></i></a>
+                            <a href="https://facebook.com/fivefoldproductions" target="_blank" aria-label="Facebook"><i
+                                    class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Panel -->
+                <div class="contact-form-panel glass-panel reveal-right in-view">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="formName">Full Name *</label>
+                                <input type="text" id="formName" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formPhone">Phone Number *</label>
+                                <input type="tel" id="formPhone" name="phone" placeholder="+91 98765 43210" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formEmail">Email Address *</label>
+                                <input type="email" id="formEmail" name="email" placeholder="john@company.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formCompany">Company Name</label>
+                                <input type="text" id="formCompany" name="company" placeholder="Example Corp">
+                            </div>
+                            <div class="form-group select-group">
+                                <label for="formService">Service Required *</label>
+                                <select id="formService" name="service" required>
+                                    <option value="" disabled selected>Select a Service</option>
+                                    <option value="Commercial Ads">Commercial Advertisements</option>
+                                    <option value="Brand Films">Brand Films</option>
+                                    <option value="Social Media Reels">Social Media Reels</option>
+                                    <option value="Product Photography">Product Photography</option>
+                                    <option value="Event Coverage">Event Coverage</option>
+                                    <option value="Corporate Videos">Corporate Videos</option>
+                                    <option value="Drone Videography">Drone Videography</option>
+                                    <option value="YouTube Production">YouTube Production</option>
+                                    <option value="Content Strategy">Content Strategy</option>
+                                    <option value="Personal Branding">Personal Branding</option>
+                                </select>
+                            </div>
+                            <div class="form-group select-group">
+                                <label for="formBudget">Budget Range (INR) *</label>
+                                <select id="formBudget" name="budget" required>
+                                    <option value="" disabled selected>Select Budget Scope</option>
+                                    <option value="Below ₹50,000">Below ₹50,000</option>
+                                    <option value="₹50,000 - ₹1,50,000">₹50,000 - ₹1,50,000</option>
+                                    <option value="₹1,50,000 - ₹5,00,000">₹1,50,000 - ₹5,00,000</option>
+                                    <option value="Above ₹5,00,000">Above ₹5,00,000 (National Campaign)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="formMessage">Message Details *</label>
+                            <textarea id="formMessage" name="message" rows="5"
+                                placeholder="Tell us about your project goals, timelines, and visual references..."
+                                required></textarea>
+                        </div>
+
+                        <div class="form-submit-buttons">
+                            <button type="submit" class="btn btn-primary" id="btnSubmitForm">Submit Inquiry</button>
+                            <button type="button" class="btn btn-secondary" onclick="triggerWhatsAppConsultation()">
+                                <i class="fab fa-whatsapp"></i> Chat On WhatsApp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-top">
+            <div class="footer-col brand-col">
+                <a href="../" class="logo">
+                    <img src="../assets/logo.png" alt="FiveFold Logo">
+                    <span>fivefold<span class="gold-text">.productions</span></span>
+                </a>
+                <p class="footer-tagline">Creating stories that move people. We design cinema-grade visual advertising campaigns for leading brands, agencies, and creators globally.</p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/fivefoldproductions" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/company/fivefoldproductions" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://youtube.com/fivefoldproductions" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://facebook.com/fivefoldproductions" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="../">Home</a></li>
+                    <li><a href="../about/">About Us</a></li>
+                    <li><a href="../services/">Our Services</a></li>
+                    <li><a href="../portfolio/">Selected Portfolio</a></li>
+                    <li><a href="../team/">Our Team</a></li>
+                    <li><a href="../process/">Process</a></li>
+                    <li><a href="./">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col services-col">
+                <h4>Core Specialties</h4>
+                <ul>
+                    <li><a href="../services/">Commercial Campaigns</a></li>
+                    <li><a href="../services/">Corporate Films</a></li>
+                    <li><a href="../services/">Social Reels & Shorts</a></li>
+                    <li><a href="../services/">Product Shoots</a></li>
+                    <li><a href="../services/">Drone Cinematography</a></li>
+                    <li><a href="../services/">Personal Branding</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col location-col">
+                <h4>Kannur Studio Hub</h4>
+                <p class="footer-address">
+                    FiveFold Productions Studio,<br>
+                    Creative Block, National Highway Road,<br>
+                    Kannur, Kerala, India - 670001
+                </p>
+                <p class="footer-email">
+                    Email: <a href="mailto:workwithfivefold@gmail.com">workwithfivefold@gmail.com</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p class="copyright">&copy; 2026 FiveFold Productions. All Rights Reserved.</p>
+                <p class="designed-by">Designed by Antigravity Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Floating WhatsApp Chat Widget -->
+    <a href="https://wa.me/919400531192?text=Hi%20FiveFold%20Productions%2C%20I%20would%20like%20to%20inquire%20about%20your%20creative%20production%20services."
+        class="whatsapp-float-widget" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Contact Form Success/Booking Overlay Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content glass-panel success-modal-content">
+            <span class="close-modal" onclick="closeSuccessModal()">&times;</span>
+            <div class="success-header text-center">
+                <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+                <h3 class="modal-title">Inquiry Submitted Successfully!</h3>
+                <p>Thank you for reaching out. We have logged your request details below.</p>
+            </div>
+            <div class="success-summary-card" id="successSummaryCard">
+                <!-- Dynamic summary elements -->
+            </div>
+            <div class="success-actions text-center">
+                <p class="success-subtext">Want an instant response? Forward this summary directly to our WhatsApp support team!</p>
+                <button class="btn btn-primary" id="btnForwardWhatsApp">
+                    <i class="fab fa-whatsapp"></i> Send Summary via WhatsApp
+                </button>
+                <button class="btn btn-secondary" onclick="closeSuccessModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Script -->
+    <script src="../script.js"></script>
+</body>
+
+</html>
