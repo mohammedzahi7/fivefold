@@ -347,12 +347,21 @@ button, input, select, textarea {
 }
 
 .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
     font-family: var(--font-headings);
     font-size: 1.3rem;
     font-weight: 500;
     color: var(--text-white);
     letter-spacing: 0.05em;
     text-transform: lowercase;
+}
+
+.logo img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-menu ul {
