@@ -1,4 +1,5 @@
 import { HeroGeometric } from "@/components/ui/shape-landing-hero"
+import { StackedCircularFooter } from "@/components/ui/stacked-circular-footer"
 
 
 function DemoHeroGeometric() {
@@ -7,4 +8,12 @@ function DemoHeroGeometric() {
             title2 = "Digital Vision" />
 }
 
-export { DemoHeroGeometric }
+function StackedCircularFooterDemo() {
+  return (
+    <div className="block">
+      <StackedCircularFooter />
+    </div>
+  );
+}
+
+export { DemoHeroGeometric, StackedCircularFooterDemo }
