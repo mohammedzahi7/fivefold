@@ -7,19 +7,19 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-start: #3b0a0a;          /* Deep Burgundy */
-    --bg-end: #1d0303;            /* Darkest Burgundy */
+    --bg-start: #5a1414;          /* Uniform Elegant Burgundy */
+    --bg-end: #5a1414;            /* Uniform Elegant Burgundy */
     --bg-gradient: linear-gradient(135deg, var(--bg-start), var(--bg-end));
     --bg-light: #f5f0e6;
-    --bg-dark: #3b0a0a;           /* Main background: Deep Burgundy */
-    --bg-darker: #942525;         /* Alternate background: Rich Crimson */
-    --bg-card: rgba(74, 15, 15, 0.5); /* Burgundy card background with transparency */
-    --bg-card-hover: rgba(90, 18, 18, 0.65);
+    --bg-dark: #5a1414;           /* Main background: Uniform Elegant Burgundy */
+    --bg-darker: #5a1414;         /* Alternate background matches main background */
+    --bg-card: rgba(40, 8, 8, 0.5); /* Slightly darker card background for contrast */
+    --bg-card-hover: rgba(60, 12, 12, 0.65);
     
     --text-white: #f5f0e6;        /* Ivory for headings */
     --text-light: rgba(245, 240, 230, 0.85); /* Ivory for body text */
     --text-muted: rgba(245, 240, 230, 0.65); /* Ivory for secondary text */
-    --text-dark: #3b0a0a;         /* Deep burgundy for text inside light surfaces */
+    --text-dark: #5a1414;         /* Deep burgundy for text inside light surfaces */
     
     --gold: #f5f0e6;              /* Gold accent variable re-mapped to Ivory */
     --gold-glow: rgba(245, 240, 230, 0.15);
@@ -254,7 +254,7 @@ button, input, select, textarea {
 /* Primary button – ivory background with deep burgundy text */
 .btn-primary {
     background: #f5f0e6;
-    color: #3b0a0a;
+    color: #5a1414;
     border: 1px solid #f5f0e6;
     box-shadow: 0 4px 20px rgba(245, 240, 230, 0.12);
 }
@@ -1841,7 +1841,7 @@ button, input, select, textarea {
 }
 
 .form-group select option {
-    background-color: #3b0a0a;
+    background-color: #5a1414;
     color: #f5f0e6;
 }
 
