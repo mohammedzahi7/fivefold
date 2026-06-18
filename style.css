@@ -7,30 +7,30 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-start: #f5f0e6;          /* Light Ivory */
-    --bg-end: #ffffff;            /* White */
+    --bg-start: #3b0a0a;          /* Deep Burgundy */
+    --bg-end: #1d0303;            /* Darkest Burgundy */
     --bg-gradient: linear-gradient(135deg, var(--bg-start), var(--bg-end));
     --bg-light: #f5f0e6;
-    --bg-dark: #ffffff;           /* Alternate section background: White */
-    --bg-darker: #f5f0e6;         /* Alternate section background: Light Ivory */
-    --bg-card: #ffffff;           /* Cards background: White */
-    --bg-card-hover: #fcfaf7;
+    --bg-dark: #3b0a0a;           /* Main background: Deep Burgundy */
+    --bg-darker: #942525;         /* Alternate background: Rich Crimson */
+    --bg-card: rgba(74, 15, 15, 0.5); /* Burgundy card background with transparency */
+    --bg-card-hover: rgba(90, 18, 18, 0.65);
     
-    --text-white: #3b0a0a;        /* Re-map default title/main text to Deep Burgundy */
-    --text-light: #521c1c;        /* Body text: Slightly lighter burgundy */
-    --text-muted: #7a6e65;        /* Muted text: Dark warm brown */
-    --text-dark: #f5f0e6;         /* Inverted text color for hover or dark elements */
+    --text-white: #f5f0e6;        /* Ivory for headings */
+    --text-light: rgba(245, 240, 230, 0.85); /* Ivory for body text */
+    --text-muted: rgba(245, 240, 230, 0.65); /* Ivory for secondary text */
+    --text-dark: #3b0a0a;         /* Deep burgundy for text inside light surfaces */
     
-    --gold: #942525;              /* Re-map Gold accent variable to Rich Crimson */
-    --gold-glow: rgba(148, 37, 37, 0.15);
-    --gold-gradient: linear-gradient(135deg, #c93d3d 0%, #942525 50%, #721919 100%);
+    --gold: #f5f0e6;              /* Gold accent variable re-mapped to Ivory */
+    --gold-glow: rgba(245, 240, 230, 0.15);
+    --gold-gradient: linear-gradient(135deg, #ffffff 0%, #f5f0e6 50%, #dcd4c6 100%);
     
-    --purple: #3b0a0a;            /* Re-map Purple accent to Deep Burgundy */
-    --purple-glow: rgba(59, 10, 10, 0.08);
+    --purple: #942525;            /* Re-map Purple accent variable to Rich Crimson */
+    --purple-glow: rgba(148, 37, 37, 0.25);
     
-    --border-color: rgba(59, 10, 10, 0.08); /* Very subtle burgundy outlines for layouts */
-    --border-hover: rgba(148, 37, 37, 0.2);
-    --border-purple: rgba(148, 37, 37, 0.1);
+    --border-color: rgba(245, 240, 230, 0.08); /* Subtle ivory outline borders */
+    --border-hover: rgba(245, 240, 230, 0.2);
+    --border-purple: rgba(148, 37, 37, 0.25);
     
     --font-headings: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -39,9 +39,9 @@
     --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     
-    --shadow-soft: 0 15px 35px rgba(59, 10, 10, 0.06); /* Soft luxury shadows */
-    --shadow-hover: 0 25px 50px rgba(59, 10, 10, 0.1);
-    --shadow-glow: 0 0 25px rgba(148, 37, 37, 0.08);
+    --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.45); /* Cinematic shadows */
+    --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.65);
+    --shadow-glow: 0 0 25px rgba(245, 240, 230, 0.08);
 }
 
 /* ==========================================================================
@@ -145,7 +145,7 @@ button, input, select, textarea {
 
 .glass-panel:hover {
     border-color: var(--border-hover);
-    box-shadow: 0 30px 60px rgba(59, 10, 10, 0.08);
+    box-shadow: var(--shadow-hover);
 }
 
 .gold-text {
@@ -153,7 +153,7 @@ button, input, select, textarea {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #3b0a0a 20%, #942525 60%, #521c1c 100%);
+    background: linear-gradient(135deg, #ffffff 20%, #f5f0e6 60%, rgba(245, 240, 230, 0.75) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -251,31 +251,32 @@ button, input, select, textarea {
     font-family: var(--font-accent);
 }
 
-/* Primary button – deep burgundy background with light ivory text */
+/* Primary button – ivory background with deep burgundy text */
 .btn-primary {
-    background: #3b0a0a;
-    color: #f5f0e6;
-    border: 1px solid #3b0a0a;
-    box-shadow: 0 4px 20px rgba(59, 10, 10, 0.08);
+    background: #f5f0e6;
+    color: #3b0a0a;
+    border: 1px solid #f5f0e6;
+    box-shadow: 0 4px 20px rgba(245, 240, 230, 0.12);
 }
 
 .btn-primary:hover {
     background: #942525;
     border-color: #942525;
+    color: #f5f0e6;
     transform: scale(1.03);
-    box-shadow: 0 6px 25px rgba(148, 37, 37, 0.15);
+    box-shadow: 0 6px 25px rgba(148, 37, 37, 0.25);
 }
 
-/* Secondary button – transparent with deep burgundy border */
+/* Secondary button – transparent with ivory border */
 .btn-secondary {
     background: transparent;
-    color: #3b0a0a;
-    border: 1px solid #3b0a0a;
+    color: #f5f0e6;
+    border: 1px solid #f5f0e6;
 }
 
 .btn-secondary:hover {
-    background: rgba(59, 10, 10, 0.05);
-    border-color: #3b0a0a;
+    background: rgba(245, 240, 230, 0.12);
+    border-color: #f5f0e6;
     transform: scale(1.03);
 }
 
@@ -309,12 +310,12 @@ button, input, select, textarea {
     position: fixed;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(148, 37, 37, 0.04) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(245, 240, 230, 0.05) 0%, transparent 60%);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
 }
 
 /* ==========================================================================
@@ -332,11 +333,11 @@ button, input, select, textarea {
 
 .header.scrolled {
     padding: 1.1rem 0;
-    background: rgba(245, 240, 230, 0.92);
+    background: rgba(59, 10, 10, 0.85);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 4px 30px rgba(59, 10, 10, 0.03);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .navbar {
@@ -1240,10 +1241,10 @@ button, input, select, textarea {
     opacity: 0.7;
 }
 
-.color-grad-1 { background: linear-gradient(135deg, #f5f0e6 0%, #ecdcd0 100%); }
-.color-grad-2 { background: linear-gradient(135deg, #f5f0e6 0%, #e2d1c3 100%); }
-.color-grad-3 { background: linear-gradient(135deg, #f5f0e6 0%, #dfd4c6 100%); }
-.color-grad-4 { background: linear-gradient(135deg, #f5f0e6 0%, #e8dbcd 100%); }
+.color-grad-1 { background: linear-gradient(135deg, #3b0a0a 0%, #1d0303 100%); }
+.color-grad-2 { background: linear-gradient(135deg, #942525 0%, #3b0a0a 100%); }
+.color-grad-3 { background: linear-gradient(135deg, #3b0a0a 0%, #5c1111 100%); }
+.color-grad-4 { background: linear-gradient(135deg, #942525 0%, #1d0303 100%); }
 
 /* Elegant CMS Portfolio Placeholder Cards */
 .portfolio-placeholder-card {
@@ -1253,9 +1254,9 @@ button, input, select, textarea {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px dashed rgba(148, 37, 37, 0.2);
+    border: 1px dashed rgba(245, 240, 230, 0.15);
     border-radius: 4px;
-    background: rgba(245, 240, 230, 0.5);
+    background: rgba(59, 10, 10, 0.4);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
@@ -1263,7 +1264,7 @@ button, input, select, textarea {
 
 .portfolio-item:hover .portfolio-placeholder-card {
     border-color: var(--gold);
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(148, 37, 37, 0.25);
     box-shadow: var(--shadow-hover);
 }
 
@@ -1824,8 +1825,8 @@ button, input, select, textarea {
 }
 
 .form-group input, .form-group select, .form-group textarea {
-    background: #ffffff;
-    border: 1px solid rgba(59, 10, 10, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(245, 240, 230, 0.1);
     padding: 1rem 1.25rem;
     border-radius: 4px;
     color: var(--text-white);
@@ -1834,14 +1835,14 @@ button, input, select, textarea {
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    background: #ffffff;
-    border-color: var(--gold);
-    box-shadow: 0 0 15px var(--gold-glow);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #f5f0e6;
+    box-shadow: 0 0 15px rgba(245, 240, 230, 0.10);
 }
 
 .form-group select option {
-    background-color: #ffffff;
-    color: #3b0a0a;
+    background-color: #3b0a0a;
+    color: #f5f0e6;
 }
 
 .form-submit-buttons {
@@ -1857,14 +1858,14 @@ button, input, select, textarea {
    FOOTER
    ========================================================================== */
 .footer {
-    --bg-darker: #3b0a0a;         /* Keep Deep Burgundy background */
-    --text-white: #f5f0e6;        /* Light Ivory headings */
-    --text-light: #e5e0d8;        /* Light Ivory body */
-    --text-muted: #bdaea6;        /* Muted warm beige */
-    --gold: #942525;              /* Crimson links/accents */
+    --bg-darker: #1a0303;         /* Darkest Burgundy variation */
+    --text-white: #f5f0e6;        /* Ivory headings */
+    --text-light: rgba(245, 240, 230, 0.85); /* Ivory body text */
+    --text-muted: rgba(245, 240, 230, 0.65); /* Ivory muted text */
+    --gold: #942525;              /* Crimson accent for link hovers */
     background-color: var(--bg-darker);
     color: var(--text-light);
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(245, 240, 230, 0.05);
     padding-top: 6rem;
     position: relative;
     z-index: 2;
@@ -2032,13 +2033,13 @@ button, input, select, textarea {
 .whatsapp-tooltip {
     position: absolute;
     left: 68px;
-    background: #ffffff; /* Light background */
+    background: rgba(5, 5, 5, 0.95); /* Dark background */
     border: 1px solid var(--border-color);
     padding: 0.45rem 1rem;
     border-radius: 4px;
     font-size: 0.7rem;
     font-weight: 700;
-    color: var(--text-white); /* Deep Burgundy text */
+    color: #f5f0e6; /* Ivory text */
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
@@ -2293,7 +2294,7 @@ button, input, select, textarea {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(59, 10, 10, 0.4);
+        background: rgba(29, 4, 4, 0.65);
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         opacity: 0;
@@ -2312,7 +2313,7 @@ button, input, select, textarea {
         width: 70%;
         max-width: 320px;
         height: 100vh;
-        background-color: rgba(245, 240, 230, 0.98);
+        background-color: rgba(59, 10, 10, 0.98);
         backdrop-filter: blur(25px);
         -webkit-backdrop-filter: blur(25px);
         z-index: 99;
