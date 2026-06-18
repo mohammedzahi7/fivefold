@@ -239,7 +239,7 @@ filterButtons.forEach(btn => {
 // TESTIMONIAL SLIDER CAROUSEL
 // ==========================================================================
 const slides = document.querySelectorAll('.testimonial-slide');
-const dots = document.querySelectorAll('.slider-dots .dot');
+const dots = document.querySelectorAll('#sliderDots .dot');
 const prevBtn = document.getElementById('sliderPrev');
 const nextBtn = document.getElementById('sliderNext');
 let currentSlide = 0;
@@ -449,97 +449,264 @@ backToTopBtn.addEventListener('click', () => {
     });
 });
 
-
 // ==========================================================================
-// TEAM SLIDER CAROUSEL LOGIC
+// TEAM CAROUSEL SLIDER UPGRADE (INFINITE LOOP, SWIPE/DRAG & SHOWCASE EFFECT)
 // ==========================================================================
-const teamSlider = document.getElementById('teamSlider');
-const teamPrevBtn = document.getElementById('teamPrev');
-const teamNextBtn = document.getElementById('teamNext');
-const teamDotElements = document.querySelectorAll('#teamDots .dot');
-let teamCurrentIndex = 0;
+const initTeamCarousel = () => {
+    const slider = document.getElementById('teamSlider');
+    if (!slider) return;
+    if (slider.classList.contains('initialized')) return;
+    slider.classList.add('initialized');
 
-const getCardsPerView = () => {
-    if (window.innerWidth < 768) return 1;
-    if (window.innerWidth < 1025) return 2;
-    return 3;
-};
+    const prevBtn = document.getElementById('teamPrev');
+    const nextBtn = document.getElementById('teamNext');
+    const dotsContainer = document.getElementById('teamDots');
 
-const updateTeamSlider = () => {
-    const cards = document.querySelectorAll('#teamSlider .team-card');
-    if (!teamSlider || cards.length === 0) return;
+    // Get original cards
+    const originalCards = Array.from(slider.querySelectorAll('.team-card'));
+    if (originalCards.length === 0) return;
 
-    const cardsPerView = getCardsPerView();
-    const maxIndex = Math.max(0, cards.length - cardsPerView);
+    const totalOriginal = originalCards.length;
+    const numToClone = 3; // Clone 3 cards to support up to 3 cards per view safely
 
-    if (teamCurrentIndex > maxIndex) teamCurrentIndex = maxIndex;
-    if (teamCurrentIndex < 0) teamCurrentIndex = 0;
-
-    const cardWidth = cards[0].offsetWidth;
-    const gap = parseFloat(getComputedStyle(teamSlider).gap) || 24;
-    const offset = -teamCurrentIndex * (cardWidth + gap);
-    
-    teamSlider.style.transform = `translateX(${offset}px)`;
-
-    // Update dots visibility and active status
-    teamDotElements.forEach((dot, index) => {
-        dot.classList.remove('active');
-        if (index === teamCurrentIndex) {
-            dot.classList.add('active');
-        }
-        // Hide dot if it is beyond the max scrollable index (meaning scrolling there makes no change)
-        if (index > maxIndex) {
-            dot.style.display = 'none';
-        } else {
-            dot.style.display = 'block';
-        }
+    // 1. DYNAMICALLY DUPLICATE CARDS FOR INFINITE LOOP
+    // Clear initial reveal animations on clones to avoid styling delays when wrapping
+    const clonesEnd = originalCards.slice(0, numToClone).map(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.remove('reveal-up', 'reveal-fade', 'reveal-left', 'reveal-right', 'visible');
+        clone.classList.add('cloned-card');
+        return clone;
     });
-};
 
-if (teamSlider) {
-    if (teamNextBtn) {
-        teamNextBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('#teamSlider .team-card');
-            const cardsPerView = getCardsPerView();
-            const maxIndex = Math.max(0, cards.length - cardsPerView);
+    const clonesStart = originalCards.slice(-numToClone).map(card => {
+        const clone = card.cloneNode(true);
+        clone.classList.remove('reveal-up', 'reveal-fade', 'reveal-left', 'reveal-right', 'visible');
+        clone.classList.add('cloned-card');
+        return clone;
+    });
 
-            if (teamCurrentIndex < maxIndex) {
-                teamCurrentIndex++;
-            } else {
-                teamCurrentIndex = 0; // wrap around to beginning
+    // Rebuild track with clones prepended and appended
+    slider.innerHTML = '';
+    clonesStart.forEach(clone => slider.appendChild(clone));
+    originalCards.forEach(card => slider.appendChild(card));
+    clonesEnd.forEach(clone => slider.appendChild(clone));
+
+    // Update references
+    const allCards = Array.from(slider.querySelectorAll('.team-card'));
+
+    // 2. STATE VARIABLES
+    let teamCurrentIndex = numToClone; // Start at the first original card
+    let isDragging = false;
+    let startX = 0;
+    let dragDeltaX = 0;
+    let autoplayTimer = null;
+
+    // 3. RESPONSIVE CONTROLS
+    const getCardsPerView = () => {
+        if (window.innerWidth < 768) return 1;
+        if (window.innerWidth < 1025) return 2;
+        return 3;
+    };
+
+    const getTranslateOffset = (index) => {
+        const cardWidth = originalCards[0].offsetWidth;
+        const gap = parseFloat(getComputedStyle(slider).gap) || 32;
+        return -index * (cardWidth + gap);
+    };
+
+    // 4. DISPLAY CONTROLS
+    const updateTransform = (offset = null) => {
+        const targetOffset = offset !== null ? offset : getTranslateOffset(teamCurrentIndex);
+        slider.style.transform = `translateX(${targetOffset}px)`;
+    };
+
+    const updateActiveClasses = () => {
+        allCards.forEach(card => card.classList.remove('center-card'));
+
+        const cardsPerView = getCardsPerView();
+        let centerIdx = teamCurrentIndex;
+
+        // Center card is offset depending on current view size
+        if (cardsPerView === 3) {
+            centerIdx = teamCurrentIndex + 1; // Middle card of 3
+        } else if (cardsPerView === 2) {
+            centerIdx = teamCurrentIndex; // Left card of 2
+        }
+
+        if (allCards[centerIdx]) {
+            allCards[centerIdx].classList.add('center-card');
+        }
+
+        // Map center card to original index (0 to totalOriginal - 1) to update dots
+        const originalIdx = (centerIdx - numToClone + totalOriginal) % totalOriginal;
+
+        // Synchronize dots
+        const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
+        dots.forEach((dot, index) => {
+            dot.classList.remove('active');
+            if (index === originalIdx) {
+                dot.classList.add('active');
             }
-            updateTeamSlider();
+        });
+    };
+
+    const updateTeamSlider = (withTransition = true) => {
+        slider.style.transition = withTransition ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+        updateTransform();
+        updateActiveClasses();
+    };
+
+    // 5. SEAMLESS WRAP SNAP CHECK
+    const snapIfNeeded = () => {
+        if (teamCurrentIndex < numToClone) {
+            teamCurrentIndex += totalOriginal;
+            updateTeamSlider(false);
+        } else if (teamCurrentIndex >= totalOriginal + numToClone) {
+            teamCurrentIndex -= totalOriginal;
+            updateTeamSlider(false);
+        }
+    };
+
+    slider.addEventListener('transitionend', () => {
+        snapIfNeeded();
+    });
+
+    // 6. GESTURES & DRAGGING (MOUSE & TOUCH)
+    const dragStart = (e) => {
+        stopAutoplay();
+        isDragging = true;
+        startX = e.pageX || e.touches[0].pageX;
+        dragDeltaX = 0;
+        slider.classList.add('dragging');
+    };
+
+    const dragMove = (e) => {
+        if (!isDragging) return;
+        const currentX = e.pageX || e.touches[0].pageX;
+        dragDeltaX = currentX - startX;
+
+        // Apply real-time translation during drag
+        const baseTranslate = getTranslateOffset(teamCurrentIndex);
+        updateTransform(baseTranslate + dragDeltaX);
+    };
+
+    const dragEnd = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        slider.classList.remove('dragging');
+
+        const dragThreshold = 50; // Snapping boundary
+        if (dragDeltaX < -dragThreshold) {
+            teamCurrentIndex++;
+        } else if (dragDeltaX > dragThreshold) {
+            teamCurrentIndex--;
+        }
+
+        updateTeamSlider(true);
+        startAutoplay();
+    };
+
+    // Bind Pointer Listeners
+    slider.addEventListener('mousedown', dragStart);
+    slider.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+    slider.addEventListener('mouseleave', dragEnd);
+
+    // Bind Touch Listeners
+    slider.addEventListener('touchstart', dragStart, { passive: true });
+    slider.addEventListener('touchmove', dragMove, { passive: true });
+    slider.addEventListener('touchend', dragEnd);
+
+    // 7. AUTOPLAY SYSTEM
+    const startAutoplay = () => {
+        stopAutoplay();
+        autoplayTimer = setInterval(() => {
+            teamCurrentIndex++;
+            updateTeamSlider(true);
+        }, 5000);
+    };
+
+    const stopAutoplay = () => {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    };
+
+    startAutoplay();
+
+    // Pause Autoplay on Hover
+    const parentContainer = slider.closest('.team-slider-container');
+    if (parentContainer) {
+        parentContainer.addEventListener('mouseenter', stopAutoplay);
+        parentContainer.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // 8. BUTTON CONTROLS
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            stopAutoplay();
+            teamCurrentIndex++;
+            updateTeamSlider(true);
+            startAutoplay();
         });
     }
 
-    if (teamPrevBtn) {
-        teamPrevBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('#teamSlider .team-card');
-            const cardsPerView = getCardsPerView();
-            const maxIndex = Math.max(0, cards.length - cardsPerView);
-
-            if (teamCurrentIndex > 0) {
-                teamCurrentIndex--;
-            } else {
-                teamCurrentIndex = maxIndex; // wrap around to end
-            }
-            updateTeamSlider();
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            stopAutoplay();
+            teamCurrentIndex--;
+            updateTeamSlider(true);
+            startAutoplay();
         });
     }
 
-    teamDotElements.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-            teamCurrentIndex = parseInt(e.target.getAttribute('data-slide'), 10);
-            updateTeamSlider();
-        });
-    });
+    // 9. DOT CONTROLS
+    if (dotsContainer) {
+        // Re-generate dots based on original cards count to ensure synchronicity
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalOriginal; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.setAttribute('data-slide', i);
+            dotsContainer.appendChild(dot);
 
+            dot.addEventListener('click', (e) => {
+                stopAutoplay();
+                const slideTarget = parseInt(e.target.getAttribute('data-slide'), 10);
+                
+                // Set index relative to numToClone
+                teamCurrentIndex = slideTarget + numToClone;
+                updateTeamSlider(true);
+                startAutoplay();
+            });
+        }
+    }
+
+    // 10. RESIZE ADJUSTMENTS
     window.addEventListener('resize', () => {
-        // Debounce resize adjustments to avoid layout jittering
-        setTimeout(updateTeamSlider, 100);
+        slider.style.transition = 'none';
+        updateTransform();
+        updateActiveClasses();
+        // Force layout pass
+        slider.offsetHeight;
+        slider.style.transition = '';
     });
 
-    // Run layout adjustments after resources load to get exact offsets
-    window.addEventListener('load', updateTeamSlider);
-    setTimeout(updateTeamSlider, 250);
-}
+    // Run initial positioning
+    setTimeout(() => {
+        updateTeamSlider(false);
+    }, 150);
+};
+
+// Initialize after DOM and resources load
+window.addEventListener('load', () => {
+    initTeamCarousel();
+});
+document.addEventListener('DOMContentLoaded', () => {
+    initTeamCarousel();
+});
+
+
+
