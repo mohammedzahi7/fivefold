@@ -476,7 +476,7 @@ const updateTeamSlider = () => {
     if (teamCurrentIndex < 0) teamCurrentIndex = 0;
 
     const cardWidth = cards[0].offsetWidth;
-    const gap = 24; // 1.5rem gap matches CSS
+    const gap = parseFloat(getComputedStyle(teamSlider).gap) || 24;
     const offset = -teamCurrentIndex * (cardWidth + gap);
     
     teamSlider.style.transform = `translateX(${offset}px)`;

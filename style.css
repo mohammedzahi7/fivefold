@@ -74,6 +74,7 @@ body {
         linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
     background-size: 100% 100%, 80px 80px, 80px 80px;
     color: var(--text-white);
+    zoom: 0.93;
 }
 
 /* Custom Scrollbar */
@@ -117,14 +118,14 @@ button, input, select, textarea {
 }
 
 .container {
-    width: 100%;
-    max-width: 100%;
+    width: 90%;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 1.5rem;
 }
 
 .section-padding {
-    padding: 9rem 0;
+    padding: 10.5rem 0;
     position: relative;
     overflow: hidden;
 }
@@ -652,79 +653,6 @@ if (mobileNavToggle && navMenu && navOverlay) {
     animation: scrollMouse 1.8s infinite ease-in-out;
 }
 
-// TEAM SLIDER CAROUSEL LOGIC
-const teamSlider = document.getElementById('teamSlider');
-const teamPrevBtn = document.getElementById('teamPrev');
-const teamNextBtn = document.getElementById('teamNext');
-const teamDotElements = document.querySelectorAll('#teamDots .dot');
-let teamCurrentIndex = 0;
-
-const getCardsPerView = () => {
-    if (window.innerWidth < 768) return 1;
-    if (window.innerWidth < 1025) return 2;
-    return 3;
-};
-
-function debounce(fn, delay) {
-    let timer;
-    return () => {
-        clearTimeout(timer);
-        timer = setTimeout(fn, delay);
-    };
-}
-
-const updateTeamSlider = () => {
-    const cards = document.querySelectorAll('#teamSlider .team-card');
-    if (!teamSlider || cards.length === 0) return;
-
-    const cardsPerView = getCardsPerView();
-    const maxIndex = Math.max(0, cards.length - cardsPerView);
-
-    if (teamCurrentIndex > maxIndex) teamCurrentIndex = maxIndex;
-    if (teamCurrentIndex < 0) teamCurrentIndex = 0;
-
-    const cardWidth = cards[0].offsetWidth;
-    const gap = parseFloat(getComputedStyle(cards[0]).marginRight) || 0;
-    const offset = -teamCurrentIndex * (cardWidth + gap);
-    teamSlider.style.transform = `translateX(${offset}px)`;
-
-    // Update dots
-    teamDotElements.forEach((dot, index) => {
-        dot.classList.toggle('active', index === teamCurrentIndex);
-        dot.style.display = index > maxIndex ? 'none' : 'block';
-    });
-};
-
-if (teamSlider) {
-    if (teamNextBtn) {
-        teamNextBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('#teamSlider .team-card');
-            const maxIndex = Math.max(0, cards.length - getCardsPerView());
-            teamCurrentIndex = teamCurrentIndex < maxIndex ? teamCurrentIndex + 1 : 0;
-            updateTeamSlider();
-        });
-    }
-    if (teamPrevBtn) {
-        teamPrevBtn.addEventListener('click', () => {
-            const cards = document.querySelectorAll('#teamSlider .team-card');
-            const maxIndex = Math.max(0, cards.length - getCardsPerView());
-            teamCurrentIndex = teamCurrentIndex > 0 ? teamCurrentIndex - 1 : maxIndex;
-            updateTeamSlider();
-        });
-    }
-
-    teamDotElements.forEach(dot => {
-        dot.addEventListener('click', e => {
-            teamCurrentIndex = parseInt(e.target.getAttribute('data-slide'), 10);
-            updateTeamSlider();
-        });
-    });
-
-    window.addEventListener('resize', debounce(updateTeamSlider, 150));
-    window.addEventListener('load', updateTeamSlider);
-    setTimeout(updateTeamSlider, 250);
-}
-
 /* ==========================================================================
    ABOUT US SECTION & PENTAGON OUTLINES
    ========================================================================== */
@@ -933,13 +861,13 @@ if (teamSlider) {
 
 .team-slider {
     display: flex;
-    gap: 1.5rem;
+    gap: 2.25rem;
     transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     align-items: stretch; /* Match heights automatically */
 }
 
 .team-card {
-    flex: 0 0 360px; /* fixed width in track */
+    flex: 0 0 310px; /* reduced card width by ~14% */
     border-radius: 12px;
     overflow: hidden;
     position: relative;
@@ -959,7 +887,7 @@ if (teamSlider) {
 .team-image-wrapper {
     position: relative;
     width: 100%;
-    height: 240px; /* comfortable image height */
+    height: 280px; /* enlarged photo height, occupies ~50% of card height */
     background-color: var(--bg-darker);
     overflow: hidden;
 }
@@ -979,7 +907,7 @@ if (teamSlider) {
 }
 
 .team-info {
-    padding: 2rem;
+    padding: 1.5rem; /* reduced padding for tighter card spacing */
     display: flex;
     flex-direction: column;
     background: rgba(15, 15, 15, 0.95);
@@ -995,48 +923,49 @@ if (teamSlider) {
 }
 
 .team-name {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
+    font-size: 1.3rem; /* slightly reduced size for better scaling in narrow card */
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.35rem;
     color: var(--text-white);
 }
 
 .team-tag {
-    font-size: 0.75rem;
+    font-size: 0.65rem; /* refined and compact role badge */
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.15em;
     color: var(--gold);
     background: rgba(212, 175, 55, 0.05);
-    padding: 0.25rem 0.75rem;
-    border-radius: 4px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
     font-family: var(--font-accent);
     font-weight: 700;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.85rem;
     align-self: flex-start;
 }
 
 .team-bio {
-    font-size: 0.85rem;
+    font-size: 0.8rem; /* reduced description text size */
     color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    line-height: 1.65; /* improved line height for readability */
+    margin-bottom: 1rem;
 }
 
-/* Inline horizontal badge tag styling for skills, tools, and responsibilities */
-.team-skills, .team-tools, .team-resp {
-    margin-bottom: 1.25rem;
+/* Inline horizontal badge tag styling for skills */
+.team-skills {
+    margin-bottom: 0;
 }
 
-.team-skills strong, .team-tools strong, .team-resp strong {
-    font-size: 0.75rem;
+.team-skills strong {
+    font-size: 0.7rem; /* refined title */
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-white);
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
-.team-skills ul, .team-tools ul, .team-resp ul {
+.team-skills ul {
     list-style: none;
     padding: 0;
     display: flex;
@@ -1044,20 +973,18 @@ if (teamSlider) {
     gap: 0.4rem;
 }
 
-.team-skills ul li, .team-tools ul li, .team-resp ul li {
-    font-size: 0.7rem;
+.team-skills ul li {
+    font-size: 0.65rem; /* refined compact skills pills */
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-light);
-    padding: 0.25rem 0.65rem;
-    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
     font-family: var(--font-accent);
     transition: var(--transition-fast);
 }
 
-.team-card:hover .team-skills ul li,
-.team-card:hover .team-tools ul li,
-.team-card:hover .team-resp ul li {
+.team-card:hover .team-skills ul li {
     background: rgba(212, 175, 55, 0.06);
     border-color: rgba(212, 175, 55, 0.25);
     color: var(--text-white);
