@@ -874,18 +874,19 @@ button, input, select, textarea {
 
 .team-card {
     flex: 0 0 calc((100% - (var(--cards-per-view) - 1) * var(--slider-gap)) / var(--cards-per-view));
-    border-radius: 12px;
+    border-radius: 24px;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--bg-card);
+    background: rgba(15, 15, 15, 0.95);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-soft);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, filter 0.6s ease, border-color 0.3s ease, box-shadow 0.6s ease;
     transform: scale(0.92);
     opacity: 0.65;
     filter: blur(1px);
+    padding-top: 2rem;
 }
 
 .team-card.center-card {
@@ -905,10 +906,23 @@ button, input, select, textarea {
 
 .team-image-wrapper {
     position: relative;
-    width: 100%;
-    height: 280px; /* enlarged photo height, occupies ~50% of card height */
+    width: 170px;
+    height: 170px;
+    margin: 0 auto;
+    border-radius: 16px;
     background-color: var(--bg-darker);
     overflow: hidden;
+    border: 3px solid rgba(245, 240, 230, 0.1);
+    transition: var(--transition-smooth);
+}
+
+.team-card.center-card .team-image-wrapper {
+    border-color: rgba(245, 240, 230, 0.25);
+}
+
+.team-card:hover .team-image-wrapper {
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 .team-image {
@@ -926,11 +940,13 @@ button, input, select, textarea {
 }
 
 .team-info {
-    padding: 1.5rem; /* reduced padding for tighter card spacing */
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    background: rgba(15, 15, 15, 0.95);
-    flex-grow: 1; /* fills remaining height */
+    background: transparent;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
 }
 
 .team-number {
@@ -942,7 +958,7 @@ button, input, select, textarea {
 }
 
 .team-name {
-    font-size: 1.3rem; /* slightly reduced size for better scaling in narrow card */
+    font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     margin-bottom: 0.35rem;
@@ -950,7 +966,7 @@ button, input, select, textarea {
 }
 
 .team-tag {
-    font-size: 0.65rem; /* refined and compact role badge */
+    font-size: 0.65rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--gold);
@@ -960,13 +976,13 @@ button, input, select, textarea {
     font-family: var(--font-accent);
     font-weight: 700;
     margin-bottom: 0.85rem;
-    align-self: flex-start;
+    align-self: center;
 }
 
 .team-bio {
-    font-size: 0.8rem; /* reduced description text size */
+    font-size: 0.8rem;
     color: var(--text-muted);
-    line-height: 1.65; /* improved line height for readability */
+    line-height: 1.65;
     margin-bottom: 1rem;
 }
 
@@ -976,7 +992,7 @@ button, input, select, textarea {
 }
 
 .team-skills strong {
-    font-size: 0.7rem; /* refined title */
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-white);
@@ -990,6 +1006,7 @@ button, input, select, textarea {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+    justify-content: center;
 }
 
 .team-skills ul li {
