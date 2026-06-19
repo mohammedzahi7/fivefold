@@ -84,6 +84,16 @@ window.addEventListener('scroll', () => {
         }
     }
 
+    // Toggle Mobile CTA Visibility on Scroll
+    const mobileCTA = document.getElementById('mobileFloatingCTA');
+    if (mobileCTA) {
+        if (window.scrollY > 300) {
+            mobileCTA.classList.add('visible');
+        } else {
+            mobileCTA.classList.remove('visible');
+        }
+    }
+
     // Scroll spy: Update active nav links for local anchor links only
     let currentSectionId = '';
     sections.forEach(section => {

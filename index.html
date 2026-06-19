@@ -35,6 +35,52 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FiveFold Productions",
+      "image": "https://fivefoldproductions.com/assets/logo.png",
+      "@id": "https://fivefoldproductions.com/#agency",
+      "url": "https://fivefoldproductions.com/",
+      "telephone": "+919400531192",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "FiveFold Productions Studio, Creative Block, National Highway Road",
+        "addressLocality": "Kannur",
+        "addressRegion": "Kerala",
+        "postalCode": "670001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.874477,
+        "longitude": 75.370366
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://instagram.com/fivefoldproductions",
+        "https://linkedin.com/company/fivefoldproductions",
+        "https://youtube.com/fivefoldproductions",
+        "https://facebook.com/fivefoldproductions"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -77,69 +123,86 @@
         </div>
     </header>
 
-    <!-- Hero Section (Abstract Luxury Art & Geometry) -->
+    <!-- Hero Section (Premium Cinematic Video Engine) -->
     <section class="hero" id="hero">
-        <div class="hero-canvas">
-            <div class="hero-spotlight purple"></div>
-            <div class="hero-spotlight gold"></div>
-            <div class="hero-streak hero-streak-1"></div>
-            <div class="hero-streak hero-streak-2"></div>
-            <div class="floating-pentagon pentagon-1"></div>
-            <div class="floating-pentagon pentagon-2"></div>
-        </div>
+
 
         <div class="container hero-content">
             <div class="hero-badge reveal-fade">
-                <span class="badge-dot"></span> Visual Architects &bull; Kannur, Kerala
+                <span class="badge-dot" style="background-color: var(--accent); box-shadow: 0 0 10px var(--accent);"></span> 
+                Visual Strategists &bull; Kannur, Kerala
             </div>
-            <h1 class="hero-title reveal-slide">
-                Creating Stories <br><span class="gradient-text">That Move People.</span>
+            <h1 class="hero-title reveal-slide" style="text-transform: uppercase; font-family: var(--font-headings); letter-spacing: -0.02em;">
+                Cinematic Stories <br><span style="color: var(--accent);">That Convert.</span>
             </h1>
-            <p class="hero-subtitle reveal-fade">
-                FiveFold Productions is a boutique creative production company translating corporate philosophies,
-                commercial products, and creator assets into cinematic-grade visual narratives.
+            <p class="hero-subtitle reveal-fade" style="font-size: 1.25rem; font-weight: 500; letter-spacing: 0.05em; color: rgba(255, 255, 255, 0.95);">
+                From brief to 2M+ views in 30 days. We script, film, and produce high-performance visual advertising campaign assets for global brands.
             </p>
             <div class="hero-cta-buttons reveal-fade">
-                <a href="portfolio/" class="btn btn-primary">View Portfolio</a>
-                <a href="contact/" class="btn btn-secondary">Book a Consultation</a>
+                <a href="portfolio/" class="btn btn-primary">See Selected Work</a>
+                <a href="contact/" class="btn btn-secondary">Launch Your Campaign <i class="fas fa-arrow-right" style="margin-left: 8px; font-size: 0.75rem;"></i></a>
             </div>
         </div>
 
         <div class="hero-scroll-indicator">
             <span class="mouse">
-                <span class="wheel"></span>
+                <span class="wheel" style="background-color: var(--accent);"></span>
             </span>
             <p>Scroll Down</p>
         </div>
     </section>
 
-    <!-- Company Introduction (Brief About Section) -->
+
+
+
+
+    <!-- Authority Statistics Grid Section -->
+    <div class="stats-grid-container" id="metrics">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card reveal-up">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Organic Video Views</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-number">30+</div>
+                    <div class="stat-label">Premium Brand Partners</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-number">150%</div>
+                    <div class="stat-label">Average Engagement Boost</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Cinema-Grade Delivery</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Introduction (Benefit-Driven Copy Section) -->
     <section class="about section-padding" id="about">
         <!-- Background element pentagon grid line -->
         <div class="about-pentagon-outline"></div>
 
         <div class="container">
             <div class="section-header text-center">
-                <span class="subtitle-badge">Who We Are</span>
-                <h2 class="section-title">Visual Stories That Build Brands</h2>
+                <span class="subtitle-badge">Our Mission</span>
+                <h2 class="section-title">Cinema-Grade Content Engineered to Convert</h2>
                 <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
             <div class="about-grid">
-                <div class="about-text-column reveal-left" style="grid-column: span 2; text-align: center; max-w: 800px; margin: 0 auto;">
-                    <p class="lead-paragraph">
-                        FiveFold Productions is a creative production company dedicated to transforming ideas into
-                        powerful visual stories. We combine strategy, creativity, and production excellence to help
-                        brands connect with their audience and drive results.
+                <div class="about-text-column reveal-left" style="grid-column: span 2; text-align: center; max-width: 800px; margin: 0 auto;">
+                    <p class="lead-paragraph" style="font-size: 1.3rem; line-height: 1.7; margin-bottom: 1.5rem; font-weight: 500;">
+                        We build custom visual campaign ecosystems that hijack customer attention, command market authority, and deliver measurable revenue scale. 
                     </p>
-                    <p class="body-paragraph" style="margin-bottom: 2rem;">
-                        We serve leading brands and creators both nationally and internationally from our base in
-                        Kannur, Kerala. Through high-end commercial campaigns, corporate films, and rapid-delivery
-                        social assets, we create custom content ecosystems that deliver measurable visual authority.
+                    <p class="body-paragraph" style="margin-bottom: 2.5rem; color: var(--text-muted); font-size: 1rem; line-height: 1.8;">
+                        Bypassing generic templates, our specialist teams execute high-contrast commercial shoots, visionary corporate brand documentaries, and viral vertical video engines from our production hub in Kannur, Kerala. We provide brands and creators with the absolute visual dominance necessary to lead their respective fields.
                     </p>
-                    <div class="about-cta" style="display: flex; justify-content: center; gap: 1.5rem; align-items: center;">
-                        <a href="about/" class="btn btn-primary">Learn Our Story</a>
-                        <a href="contact/" class="btn-text">Let's create together <i class="fas fa-arrow-right"></i></a>
+                    <div class="about-cta" style="display: flex; justify-content: center; gap: 1.5rem; align-items: center; flex-wrap: wrap;">
+                        <a href="about/" class="btn btn-primary">Discover Our Strategy</a>
+                        <a href="contact/" class="btn-text">Consult a Director <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
                     </div>
                 </div>
             </div>
@@ -147,7 +210,7 @@
     </section>
 
     <!-- Featured Services (Condense of Services) -->
-    <section class="services section-padding" id="featured-services" style="background: #942525;">
+    <section class="services section-padding" id="featured-services">
         <div class="container">
             <div class="section-header text-center">
                 <span class="subtitle-badge">Our Focus</span>
@@ -159,26 +222,26 @@
             <div class="services-grid">
                 <!-- 1. Commercial Advertisements -->
                 <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-ad"></i></div>
+                    <div class="service-icon" style="color: var(--accent);"><i class="fas fa-ad"></i></div>
                     <h3 class="service-title">Commercial Campaigns</h3>
-                    <p class="service-desc">High-production commercials designed for TV, cinema, and digital campaigns that represent your brand premiumly.</p>
-                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
+                    <p class="service-desc">Engineered to drive sales and elevate brand perception on big screens and targeted digital campaigns.</p>
+                    <a href="services/#commercial" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.75rem; padding: 0.6rem 1.2rem; background: var(--accent); border-color: var(--accent);">See 5-sec luxury commercial <i class="fas fa-chevron-right" style="font-size: 0.65rem; margin-left: 5px;"></i></a>
                 </div>
 
                 <!-- 2. Brand Films -->
                 <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fas fa-film"></i></div>
+                    <div class="service-icon" style="color: var(--accent);"><i class="fas fa-film"></i></div>
                     <h3 class="service-title">Brand Story Films</h3>
-                    <p class="service-desc">Narrative-driven films that communicate your values, heritage, and unique mission statement dynamically.</p>
-                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
+                    <p class="service-desc">Build raw loyalty and communicate company vision through cinematic, human-centric visual documentaries.</p>
+                    <a href="services/#corporate" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.75rem; padding: 0.6rem 1.2rem; background: var(--accent); border-color: var(--accent);">Download brief template <i class="fas fa-chevron-right" style="font-size: 0.65rem; margin-left: 5px;"></i></a>
                 </div>
 
                 <!-- 3. Social Media Reels -->
                 <div class="service-card glass-panel reveal-up">
-                    <div class="service-icon"><i class="fab fa-tiktok"></i></div>
+                    <div class="service-icon" style="color: var(--accent);"><i class="fab fa-tiktok"></i></div>
                     <h3 class="service-title">Social Content Ecosystems</h3>
-                    <p class="service-desc">Fast-paced, hook-driven vertical videos optimized for TikTok, Instagram Reels, and YouTube Shorts algorithms.</p>
-                    <a href="services/" class="service-link">Read Details <i class="fas fa-chevron-right"></i></a>
+                    <p class="service-desc">Capture attention instantly with high-velocity vertical reels engineered to hit viral algorithms.</p>
+                    <a href="services/#social" class="btn btn-primary" style="margin-top: 1rem; font-size: 0.75rem; padding: 0.6rem 1.2rem; background: var(--accent); border-color: var(--accent);">Get viral Reel recipe template <i class="fas fa-chevron-right" style="font-size: 0.65rem; margin-left: 5px;"></i></a>
                 </div>
             </div>
 
@@ -201,7 +264,8 @@
                 <!-- Project 1 (Commercial) -->
                 <div class="portfolio-item glass-panel filter-item commercial reveal-up">
                     <div class="portfolio-img-wrapper">
-                        <img src="assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img">
+                        <div class="project-metrics">2.4M Views</div>
+                        <img src="assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img" loading="lazy">
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Commercial</span>
                             <h3 class="project-client">Zenith Luxury Watches</h3>
@@ -216,7 +280,8 @@
                 <!-- Project 2 (Drone) -->
                 <div class="portfolio-item glass-panel filter-item drone reveal-up">
                     <div class="portfolio-img-wrapper">
-                        <img src="assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img">
+                        <div class="project-metrics">800K Views</div>
+                        <img src="assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img" loading="lazy">
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Drone Cinematography</span>
                             <h3 class="project-client">Kerala Tourism Board</h3>
@@ -236,7 +301,7 @@
     </section>
 
     <!-- Team Preview Teaser -->
-    <section class="team-teaser section-padding" style="background: #942525; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="team-teaser section-padding" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
         <div class="container text-center">
             <span class="subtitle-badge">The Crew</span>
             <h2 class="section-title">The Creative Minds Behind FiveFold</h2>
@@ -246,7 +311,7 @@
     </section>
 
     <!-- Home Call to Action Banner -->
-    <section class="cta-banner section-padding" style="background: #942525; border-top: 1px solid var(--border-color);">
+    <section class="cta-banner section-padding" style="border-top: 1px solid var(--border-color);">
         <div class="container text-center reveal-up">
             <span class="subtitle-badge">Collaborate With Us</span>
             <h2 class="section-title">Let's Create Stories Together</h2>
@@ -356,6 +421,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Floating Mobile CTA (Sticky Dynamic bottom-sheet) -->
+    <a href="contact/" class="floating-mobile-cta" id="mobileFloatingCTA">
+        <i class="fas fa-paper-plane"></i> Consult a Director
+    </a>
 
     <!-- Custom Script -->
     <script src="script.js"></script>

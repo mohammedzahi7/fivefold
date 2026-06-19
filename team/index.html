@@ -18,6 +18,52 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FiveFold Productions",
+      "image": "https://fivefoldproductions.com/assets/logo.png",
+      "@id": "https://fivefoldproductions.com/#agency",
+      "url": "https://fivefoldproductions.com/",
+      "telephone": "+919400531192",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "FiveFold Productions Studio, Creative Block, National Highway Road",
+        "addressLocality": "Kannur",
+        "addressRegion": "Kerala",
+        "postalCode": "670001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.874477,
+        "longitude": 75.370366
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://instagram.com/fivefoldproductions",
+        "https://linkedin.com/company/fivefoldproductions",
+        "https://youtube.com/fivefoldproductions",
+        "https://facebook.com/fivefoldproductions"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -78,7 +124,7 @@
     </section>
 
     <!-- Redesigned Meet Our Team Section (Interactive Carousel) -->
-    <section class="team section-padding" id="team" style="background: #3b0a0a;">
+    <section class="team section-padding" id="team">
         <div class="container">
             <div class="team-header-container">
                 <div class="section-header" style="text-align:center; width: 100%;">
@@ -96,12 +142,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/sahil_new.jpg" alt="Mohammed Sahil" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/mohammedsahil" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 01</span>
                                 <h3 class="team-name">Mohammed Sahil</h3>
-                                <span class="team-tag gold-text">Director of Photography & Editor</span>
-                                <p class="team-bio">Responsible for visual storytelling, cinematography, camera operations, and creative video production.</p>
+                                <span class="team-tag">Director of Photography & Editor</span>
+                                <p class="team-bio">Transforms complex marketing goals into high-end cinematic visuals. Specializes in advanced camera rigging and commercial pacing to capture audience attention.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -119,12 +168,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/member_3.jpg" alt="Akif Anis" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/akifanis" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 02</span>
                                 <h3 class="team-name">Akif Anis</h3>
-                                <span class="team-tag gold-text">Social Media Content Director</span>
-                                <p class="team-bio">Crafts engaging social content, reels, trends research, and rapid‑turnaround editing.</p>
+                                <span class="team-tag">Social Media Content Director</span>
+                                <p class="team-bio">Engineers viral hook strategies for short-form social campaigns. Combines cultural trends analysis and rapid-delivery workflows to drive viewer action.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -142,12 +194,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/chachu_new.png" alt="Shazin Rafi" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/shazinrafi" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 03</span>
                                 <h3 class="team-name">Shazin Rafi</h3>
-                                <span class="team-tag gold-text">Visual Stylist & Lead Colorist</span>
-                                <p class="team-bio">Defines visual aesthetics, color grading, and premium brand styling.</p>
+                                <span class="team-tag">Visual Stylist & Lead Colorist</span>
+                                <p class="team-bio">Sculpts signature brand aesthetics and luxury color grades. Establishes the visual tone and stylistic depth required for global market authority.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -164,12 +219,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/member_4.jpg" alt="Adhil Azeez" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/adhilazeez" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 04</span>
                                 <h3 class="team-name">Adhil Azeez</h3>
-                                <span class="team-tag gold-text">Post‑Production Editor</span>
-                                <p class="team-bio">Manages editing workflows, motion graphics, script writer, and final content delivery.</p>
+                                <span class="team-tag">Post‑Production Editor</span>
+                                <p class="team-bio">Directs post-production assembly and narrative scripting. Synchronizes audio dynamics and visual pacing to deliver seamless campaign storylines.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -186,12 +244,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/nazim_new.png" alt="Muhammed Nazim" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/muhammednazim" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 05</span>
                                 <h3 class="team-name">Muhammed Nazim</h3>
-                                <span class="team-tag gold-text">BTS Lead & Digital Media Editor</span>
-                                <p class="team-bio">Captures behind‑the‑scenes content, creates reels, and produces short‑form social media assets.</p>
+                                <span class="team-tag">BTS Lead & Digital Media Editor</span>
+                                <p class="team-bio">Produces high-engagement digital assets and documentary teasers. Captures raw production authority to build trust across brand channels.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -208,12 +269,15 @@
                         <div class="team-card premium-card reveal-up in-view" data-tilt>
                             <div class="team-image-wrapper">
                                 <img src="../assets/zahi_new.jpg" alt="Mohammed Zahi" class="team-image" />
+                                <div class="team-social-overlay">
+                                    <a href="https://linkedin.com/in/mohammedzahi" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
                             </div>
                             <div class="team-info">
                                 <span class="team-number">MEMBER 06</span>
                                 <h3 class="team-name">Mohammed Zahi</h3>
-                                <span class="team-tag gold-text">Managing Director</span>
-                                <p class="team-bio">Leads business strategy, client acquisition, partnerships, and company growth initiatives.</p>
+                                <span class="team-tag">Managing Director</span>
+                                <p class="team-bio">Leads commercial strategy, joint-venture partnerships, and agency growth. Directs client relations to translate brand concepts into high-margin campaigns.</p>
                                 <div class="team-skills">
                                     <strong>Core Skills:</strong>
                                     <ul>
@@ -323,6 +387,11 @@
         class="whatsapp-float-widget" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
         <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Floating Mobile CTA (Sticky Dynamic bottom-sheet) -->
+    <a href="../contact/" class="floating-mobile-cta" id="mobileFloatingCTA">
+        <i class="fas fa-paper-plane"></i> Consult a Director
     </a>
 
     <!-- Custom Script -->

@@ -18,6 +18,52 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../style.css">
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "FiveFold Productions",
+      "image": "https://fivefoldproductions.com/assets/logo.png",
+      "@id": "https://fivefoldproductions.com/#agency",
+      "url": "https://fivefoldproductions.com/",
+      "telephone": "+919400531192",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "FiveFold Productions Studio, Creative Block, National Highway Road",
+        "addressLocality": "Kannur",
+        "addressRegion": "Kerala",
+        "postalCode": "670001",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 11.874477,
+        "longitude": 75.370366
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://instagram.com/fivefoldproductions",
+        "https://linkedin.com/company/fivefoldproductions",
+        "https://youtube.com/fivefoldproductions",
+        "https://facebook.com/fivefoldproductions"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -78,7 +124,7 @@
     </section>
 
     <!-- Portfolio Grid Section -->
-    <section class="portfolio section-padding" id="portfolio" style="background: #3b0a0a;">
+    <section class="portfolio section-padding" id="portfolio">
         <div class="container">
             <!-- Portfolio Navigation Category Filters -->
             <div class="portfolio-filters" id="portfolioFilters" style="margin-bottom: 3.5rem;">
@@ -97,7 +143,8 @@
                 <!-- Project 1 (Commercial) -->
                 <div class="portfolio-item glass-panel filter-item commercial reveal-up in-view">
                     <div class="portfolio-img-wrapper">
-                        <img src="../assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img">
+                        <div class="project-metrics">2.4M Views</div>
+                        <img src="../assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img" loading="lazy">
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Commercial</span>
                             <h3 class="project-client">Zenith Luxury Watches</h3>
@@ -112,7 +159,8 @@
                 <!-- Project 2 (Drone) -->
                 <div class="portfolio-item glass-panel filter-item drone reveal-up in-view">
                     <div class="portfolio-img-wrapper">
-                        <img src="../assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img">
+                        <div class="project-metrics">800K Views</div>
+                        <img src="../assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img" loading="lazy">
                         <div class="portfolio-hover-content">
                             <span class="project-tag">Drone Cinematography</span>
                             <h3 class="project-client">Kerala Tourism Board</h3>
@@ -127,6 +175,7 @@
                 <!-- Project 3 (Corporate) -->
                 <div class="portfolio-item glass-panel filter-item corporate reveal-up in-view">
                     <div class="portfolio-img-wrapper">
+                        <div class="project-metrics">1.2M Reach</div>
                         <div class="portfolio-placeholder-media color-grad-1">
                             <i class="fas fa-building media-icon"></i>
                             <span>Corporate Showcase</span>
@@ -145,6 +194,7 @@
                 <!-- Project 4 (Events) -->
                 <div class="portfolio-item glass-panel filter-item events reveal-up in-view">
                     <div class="portfolio-img-wrapper">
+                        <div class="project-metrics">300K Reach</div>
                         <div class="portfolio-placeholder-media color-grad-2">
                             <i class="fas fa-glass-cheers media-icon"></i>
                             <span>Royal Union Event</span>
@@ -163,6 +213,7 @@
                 <!-- Project 5 (Photography) -->
                 <div class="portfolio-item glass-panel filter-item photography reveal-up in-view">
                     <div class="portfolio-img-wrapper">
+                        <div class="project-metrics">450K Views</div>
                         <div class="portfolio-placeholder-media color-grad-3">
                             <i class="fas fa-camera-retro media-icon"></i>
                             <span>Aura Fashion Shoot</span>
@@ -181,6 +232,7 @@
                 <!-- Project 6 (Social Media) -->
                 <div class="portfolio-item glass-panel filter-item social reveal-up in-view">
                     <div class="portfolio-img-wrapper">
+                        <div class="project-metrics">500K Views</div>
                         <div class="portfolio-placeholder-media color-grad-4">
                             <i class="fab fa-instagram-square media-icon"></i>
                             <span>Spicy Kitchen Reels</span>
@@ -196,6 +248,98 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Case Studies Section -->
+    <section class="case-studies section-padding" style="border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle-badge" style="color: var(--accent); background: rgba(232, 89, 60, 0.05); border-color: rgba(232, 89, 60, 0.15);">Performance Metrics</span>
+                <h2 class="section-title">Visual Case Studies</h2>
+                <p class="section-subtitle">Real numbers. Real growth. How we engineer cinema-grade content that drives commercial conversions.</p>
+                <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
+            </div>
+
+            <div class="case-studies-grid" style="display: grid; grid-template-columns: 1fr; gap: 5rem; margin-top: 4rem;">
+                <!-- Case Study 1 -->
+                <div class="case-study-card glass-panel" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; padding: 3rem; border-radius: 20px; align-items: center;">
+                    <div class="case-study-media">
+                        <img src="../assets/portfolio_commercial.png" alt="Zenith Watches Case Study" style="border-radius: 12px; width: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+                    <div class="case-study-details">
+                        <span class="subtitle-badge" style="margin-bottom: 1rem;">COMMERCIAL ADS</span>
+                        <h3 style="font-size: 2rem; font-family: var(--font-headings); margin-bottom: 1.5rem; color: var(--text-white);">Zenith Luxury Watches</h3>
+                        <div class="case-study-metrics" style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">2.4M+</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Views in 30 Days</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">+180%</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Inquiry Conversion</div>
+                            </div>
+                        </div>
+                        <div class="case-study-text" style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem; line-height: 1.7;">
+                            <p><strong>Challenge:</strong> Zenith Luxury needed to drive regional interest for their hand-crafted mechanics without diluting their historic, high-end branding.</p>
+                            <p><strong>Solution:</strong> We filmed a high-contrast macro ad focusing on physical gear movements, utilizing bespoke probe lenses, motion control rigs, and a rich, golden lighting schema.</p>
+                            <p><strong>Results:</strong> The commercial hit 2.4M organic impressions on YouTube and Instagram Reels, driving a 180% increase in local store consultations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="case-study-card glass-panel" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; padding: 3rem; border-radius: 20px; align-items: center;">
+                    <div class="case-study-media">
+                        <img src="../assets/portfolio_drone.png" alt="Kerala Tourism Case Study" style="border-radius: 12px; width: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+                    <div class="case-study-details">
+                        <span class="subtitle-badge" style="margin-bottom: 1rem;">AERIAL CINEMATOGRAPHY</span>
+                        <h3 style="font-size: 2rem; font-family: var(--font-headings); margin-bottom: 1.5rem; color: var(--text-white);">Kerala Tourism Board</h3>
+                        <div class="case-study-metrics" style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">800K+</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Organic Reels Reach</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">35K+</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Saves & Shares</div>
+                            </div>
+                        </div>
+                        <div class="case-study-text" style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem; line-height: 1.7;">
+                            <p><strong>Challenge:</strong> Put the misty heights of Kannur's Western Ghats on the map for luxury eco-travelers during off-season monsoon months.</p>
+                            <p><strong>Solution:</strong> Conducted sunrise drone operations under heavy mist, capturing slow-motion cinematic runs and editing them to an atmospheric soundscapes sequence.</p>
+                            <p><strong>Results:</strong> Over 800K reach within weeks, resulting in a spike in boutique resort bookings across the Kannur hill region.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="case-study-card glass-panel" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; padding: 3rem; border-radius: 20px; align-items: center;">
+                    <div class="case-study-media" style="background: rgba(255,255,255,0.02); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px solid var(--border-color);">
+                        <i class="fas fa-building" style="font-size: 4rem; color: var(--accent);"></i>
+                    </div>
+                    <div class="case-study-details">
+                        <span class="subtitle-badge" style="margin-bottom: 1rem;">CORPORATE STORYTELLING</span>
+                        <h3 style="font-size: 2rem; font-family: var(--font-headings); margin-bottom: 1.5rem; color: var(--text-white);">Malabar Tech Hub</h3>
+                        <div class="case-study-metrics" style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">1.2M+</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">LinkedIn Impressions</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 2.2rem; font-weight: 800; color: var(--accent);">+300%</div>
+                                <div style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted);">Inbound Job Applications</div>
+                            </div>
+                        </div>
+                        <div class="case-study-text" style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem; line-height: 1.7;">
+                            <p><strong>Challenge:</strong> Establish Malabar Tech Hub as the top creative workplace in North Kerala to attract top-tier global talent.</p>
+                            <p><strong>Solution:</strong> We crafted a premium, fast-paced employee culture film blending modern visual assets, drone office sweeps, and short-form conversational cuts.</p>
+                            <p><strong>Results:</strong> Reached 1.2M+ business professionals on LinkedIn, elevating company inbound applications by 300% within one recruitment cycle.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -292,6 +436,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Floating Mobile CTA (Sticky Dynamic bottom-sheet) -->
+    <a href="../contact/" class="floating-mobile-cta" id="mobileFloatingCTA">
+        <i class="fas fa-paper-plane"></i> Consult a Director
+    </a>
 
     <!-- Custom Script -->
     <script src="../script.js"></script>
