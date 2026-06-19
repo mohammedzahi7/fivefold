@@ -2824,14 +2824,6 @@ button, input, select, textarea {
     letter-spacing: 0.05em;
 }
 
-/* Case Study Layout Responsive overrides */
-@media (max-width: 992px) {
-    .case-study-card {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
-        padding: 1.5rem !important;
-    }
-}
 
 /* Team social overlay on hover */
 .team-social-overlay {
