@@ -225,10 +225,33 @@ if (aboutSection) {
 
 
 // ==========================================================================
-// PORTFOLIO FILTERING GRID LOGIC
+// PORTFOLIO FILTERING GRID LOGIC (SUPPORTING NEW VIDEO SHOWCASE CARDS)
 // ==========================================================================
 const filterButtons = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+const portfolioItems = document.querySelectorAll('.portfolio-item, .video-card');
+
+// Helper function to stop any active video playing on filter or page changes
+const stopActiveVideos = () => {
+    const activePlayers = document.querySelectorAll('.video-player-active');
+    activePlayers.forEach(player => {
+        const container = player.closest('.video-thumbnail-container');
+        if (container) {
+            // Restore thumbnail content
+            const originalThumb = container.getAttribute('data-original-thumb');
+            const originalDuration = container.getAttribute('data-original-duration');
+            
+            container.innerHTML = `
+                <img src="${originalThumb}" alt="Video Thumbnail" class="video-thumbnail" loading="lazy">
+                <div class="play-btn-overlay">
+                    <div class="play-btn-circle">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                ${originalDuration ? `<div class="video-duration">${originalDuration}</div>` : ''}
+            `;
+        }
+    });
+};
 
 filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -236,10 +259,14 @@ filterButtons.forEach(btn => {
         btn.classList.add('active');
 
         const filterValue = btn.getAttribute('data-filter');
+        
+        // Stop any running video playback immediately on filter change
+        stopActiveVideos();
 
         portfolioItems.forEach(item => {
             if (filterValue === 'all' || item.classList.contains(filterValue)) {
-                item.style.display = 'block';
+                // If it is a video-card, we want display: flex. For others, block.
+                item.style.display = item.classList.contains('video-card') ? 'flex' : 'block';
                 setTimeout(() => {
                     item.style.opacity = '1';
                     item.style.transform = 'scale(1)';
@@ -251,6 +278,61 @@ filterButtons.forEach(btn => {
                     item.style.display = 'none';
                 }, 400);
             }
+        });
+    });
+});
+
+// ==========================================================================
+// DYNAMIC VIDEO PLAYBACK ENGINE (LAZY LOADING CLICK-TO-PLAY)
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const videoGrids = document.querySelectorAll('.video-grid');
+    if (videoGrids.length === 0) return;
+
+    videoGrids.forEach(grid => {
+        grid.addEventListener('click', (e) => {
+            const thumbnailContainer = e.target.closest('.video-thumbnail-container');
+            if (!thumbnailContainer) return;
+
+            const videoCard = thumbnailContainer.closest('.video-card');
+            if (!videoCard) return;
+
+            // Check if this card is already playing a video
+            if (thumbnailContainer.querySelector('.video-player-active')) return;
+
+            // Stop all other playing videos first
+            stopActiveVideos();
+
+            const videoSrc = videoCard.getAttribute('data-video-src');
+            if (!videoSrc) return;
+
+            // Store original thumbnail and duration content in data attributes if not already done
+            const imgEl = thumbnailContainer.querySelector('.video-thumbnail');
+            const durationEl = thumbnailContainer.querySelector('.video-duration');
+            
+            if (!thumbnailContainer.hasAttribute('data-original-thumb') && imgEl) {
+                thumbnailContainer.setAttribute('data-original-thumb', imgEl.getAttribute('src'));
+            }
+            if (!thumbnailContainer.hasAttribute('data-original-duration') && durationEl) {
+                thumbnailContainer.setAttribute('data-original-duration', durationEl.textContent);
+            }
+
+            // Create the active HTML5 video element
+            const videoElement = document.createElement('video');
+            videoElement.src = videoSrc;
+            videoElement.className = 'video-player-active';
+            videoElement.controls = true;
+            videoElement.autoplay = true;
+            videoElement.playsInline = true;
+
+            // Clear container and append the video player
+            thumbnailContainer.innerHTML = '';
+            thumbnailContainer.appendChild(videoElement);
+
+            // Start playback
+            videoElement.play().catch(error => {
+                console.error('Autoplay prevented or video load failed:', error);
+            });
         });
     });
 });

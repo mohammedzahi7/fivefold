@@ -251,51 +251,156 @@
         </div>
     </section>
 
-    <!-- Featured Projects (Condense of Portfolio) -->
-    <section class="portfolio section-padding" id="featured-portfolio">
+    <!-- Featured Video Projects Showcase -->
+    <section class="portfolio section-padding" id="featured-portfolio" style="background-color: #1A0A0F;">
         <div class="container">
             <div class="section-header text-center">
                 <span class="subtitle-badge">Our Creations</span>
-                <h2 class="section-title">Featured Works</h2>
+                <h2 class="section-title">Featured Video Projects</h2>
+                <p class="section-subtitle" style="margin-top: 10px; color: var(--text-muted);">A selection of our latest films, commercials, brand stories, and visual productions.</p>
                 <div class="five-lines-separator"><span></span><span></span><span></span><span></span><span></span></div>
             </div>
 
-            <div class="portfolio-grid" id="portfolioGrid" style="margin-bottom: 3.5rem;">
-                <!-- Project 1 (Commercial) -->
-                <div class="portfolio-item glass-panel filter-item commercial reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="project-metrics">2.4M Views</div>
-                        <img src="assets/portfolio_commercial.png" alt="Commercial Production" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Commercial</span>
-                            <h3 class="project-client">Zenith Luxury Watches</h3>
-                            <p class="project-description">A high-end cinematic product showcase advertisement focusing on precision mechanics.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('Zenith Luxury Watches', 'Commercial', 'assets/portfolio_commercial.png', 'Zenith Luxury Watches commercial captured using macro lens structures, custom camera rig movements, and golden dynamic lighting to represent absolute elegance.')">View
-                                Project</button>
+            <!-- Video Category Filters -->
+            <div class="portfolio-filters" id="videoPortfolioFilters" style="margin-bottom: 3.5rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="brand-films">Brand Films</button>
+                <button class="filter-btn" data-filter="commercials">Commercials</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="corporate">Corporate</button>
+                <button class="filter-btn" data-filter="social-media">Social Media</button>
+            </div>
+
+            <div class="video-grid" id="videoGrid" style="margin-bottom: 3.5rem;">
+                <!-- Video Project 1 (Commercials) -->
+                <div class="video-card glass-panel filter-item commercials reveal-up" data-video-src="assets/our work vedios/product.MOV">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/product.jpg" alt="Zenith Precision Product Commercial" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </div>
+                        <div class="video-duration">0:45</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Commercials</span>
+                            <span class="video-prod-type">Product Advertisement</span>
+                        </div>
+                        <h3 class="video-title">Zenith Precision</h3>
+                        <p class="video-desc">A high-end cinematic product showcase advertisement focusing on precision gear mechanics.</p>
                     </div>
                 </div>
 
-                <!-- Project 2 (Drone) -->
-                <div class="portfolio-item glass-panel filter-item drone reveal-up">
-                    <div class="portfolio-img-wrapper">
-                        <div class="project-metrics">800K Views</div>
-                        <img src="assets/portfolio_drone.png" alt="Drone Cinematography" class="portfolio-img" loading="lazy">
-                        <div class="portfolio-hover-content">
-                            <span class="project-tag">Drone Cinematography</span>
-                            <h3 class="project-client">Kerala Tourism Board</h3>
-                            <p class="project-description">Stunning misty aerial reels showing the scenic heights of Western Ghats in Kannur.</p>
-                            <button class="btn btn-project-view"
-                                onclick="openProjectModal('Kerala Tourism Board', 'Drone', 'assets/portfolio_drone.png', 'A beautiful documentary piece capturing Kerala\'s misty hills and winding roads during the early sunrise using high-altitude 4K drone cinematography.')">View
-                                Project</button>
+                <!-- Video Project 2 (Brand Films) -->
+                <div class="video-card glass-panel filter-item brand-films reveal-up" data-video-src="assets/our work vedios/travel.MP4">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/travel_mp4.jpg" alt="Wanderlust India Brand Film" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </div>
+                        <div class="video-duration">1:30</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Brand Films</span>
+                            <span class="video-prod-type">Tourism Campaign</span>
+                        </div>
+                        <h3 class="video-title">Wanderlust India</h3>
+                        <p class="video-desc">Sleek, cinematic visuals showcasing the scenic heights and misty hills of North Kerala.</p>
+                    </div>
+                </div>
+
+                <!-- Video Project 3 (Corporate) -->
+                <div class="video-card glass-panel filter-item corporate reveal-up" data-video-src="assets/our work vedios/blog.MOV">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/blog.jpg" alt="Inside Malabar Tech Hub Profile" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-duration">3:00</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Corporate</span>
+                            <span class="video-prod-type">Corporate Profile Film</span>
+                        </div>
+                        <h3 class="video-title">Inside Malabar Tech</h3>
+                        <p class="video-desc">A corporate culture film highlighting workspace infrastructure, team synergy, and visionary management.</p>
+                    </div>
+                </div>
+
+                <!-- Video Project 4 (Events) -->
+                <div class="video-card glass-panel filter-item events reveal-up" data-video-src="assets/our work vedios/events.MOV">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/events.jpg" alt="The Royal Union Wedding Event film" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-duration">2:15</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Events</span>
+                            <span class="video-prod-type">Premium Event Coverage</span>
+                        </div>
+                        <h3 class="video-title">The Royal Union</h3>
+                        <p class="video-desc">Cinematic celebration coverage capturing traditional wedding rituals, candid smiles, and grand night highlights.</p>
+                    </div>
+                </div>
+
+                <!-- Video Project 5 (Social Media) -->
+                <div class="video-card glass-panel filter-item social-media reveal-up" data-video-src="assets/our work vedios/restaurant.MOV">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/restaurant.jpg" alt="Sizzling Kitchen Reels Social Media" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-duration">0:30</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Social Media</span>
+                            <span class="video-prod-type">Social Commercial</span>
+                        </div>
+                        <h3 class="video-title">Sizzling Kitchen Reels</h3>
+                        <p class="video-desc">High-energy vertical culinary reels covering dish assembly, dynamic zooms, and fast pacing.</p>
+                    </div>
+                </div>
+
+                <!-- Video Project 6 (Brand Films) -->
+                <div class="video-card glass-panel filter-item brand-films reveal-up" data-video-src="assets/our work vedios/travel.MOV">
+                    <div class="video-thumbnail-container">
+                        <img src="assets/thumbnails/travel_mov.jpg" alt="Western Ghats Odyssey Drone film" class="video-thumbnail" loading="lazy">
+                        <div class="play-btn-overlay">
+                            <div class="play-btn-circle">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-duration">2:00</div>
+                    </div>
+                    <div class="video-card-info">
+                        <div class="video-card-meta">
+                            <span class="video-category">Brand Films</span>
+                            <span class="video-prod-type">Cinematic Drone Film</span>
+                        </div>
+                        <h3 class="video-title">Western Ghats Odyssey</h3>
+                        <p class="video-desc">Monsoon drone cinematography capturing slow-motion runs across Kerala's misty valley landscape.</p>
                     </div>
                 </div>
             </div>
 
             <div style="text-align: center;">
-                <a href="portfolio/" class="btn btn-primary">Browse Complete Work Gallery</a>
+                <a href="portfolio/" class="btn btn-primary" id="viewFullPortfolioBtn">View Full Portfolio</a>
             </div>
         </div>
     </section>
