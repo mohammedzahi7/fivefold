@@ -7,14 +7,14 @@
    DESIGN VARIABLES & COLOR SYSTEM
    ========================================================================== */
 :root {
-    --bg-start: #5a1414;          /* Uniform Elegant Burgundy */
-    --bg-end: #5a1414;            /* Uniform Elegant Burgundy */
-    --bg-gradient: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    --bg-start: #1A0A0F;          
+    --bg-end: #1A0A0F;            
+    --bg-gradient: #1A0A0F;
     --bg-light: #f5f0e6;
-    --bg-dark: #5a1414;           /* Main background: Uniform Elegant Burgundy */
-    --bg-darker: #5a1414;         /* Alternate background matches main background */
-    --bg-card: rgba(40, 8, 8, 0.5); /* Slightly darker card background for contrast */
-    --bg-card-hover: rgba(60, 12, 12, 0.65);
+    --bg-dark: #1A0A0F;           
+    --bg-darker: #1A0A0F;         
+    --bg-card: #231016; 
+    --bg-card-hover: #2e151d;
     
     --text-white: #f5f0e6;        /* Ivory for headings */
     --text-light: rgba(245, 240, 230, 0.85); /* Ivory for body text */
@@ -69,14 +69,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
-    background: var(--bg-gradient);
-    background-attachment: fixed;
-    /* Subtle luxury texture grain */
-    background-image:
-        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
-        linear-gradient(rgba(255, 255, 255, 0.005) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.005) 1px, transparent 1px);
-    background-size: 100% 100%, 80px 80px, 80px 80px;
+    background: #1A0A0F;
     color: var(--text-white);
     zoom: 0.93;
 }
@@ -132,16 +125,18 @@ button, input, select, textarea {
     padding: 13.5rem 0;
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 /* ==========================================================================
    BRAND COMPONENT BLOCKS
    ========================================================================== */
 .glass-panel {
-    background: var(--bg-card);
+    background: #231016;
     backdrop-filter: blur(12px) saturate(150%);
     -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: none;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
 }
@@ -877,13 +872,13 @@ button, input, select, textarea {
 
 .team-card {
     flex: 0 0 calc((100% - (var(--cards-per-view) - 1) * var(--slider-gap)) / var(--cards-per-view));
-    border-radius: 24px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
     display: flex;
     flex-direction: column;
-    background: rgba(15, 15, 15, 0.95);
-    border: 1px solid var(--border-color);
+    background: #231016;
+    border: 1px solid rgba(255,255,255,0.08);
     box-shadow: var(--shadow-soft);
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease, filter 0.6s ease, border-color 0.3s ease, box-shadow 0.6s ease;
     transform: scale(0.92);
@@ -1132,7 +1127,7 @@ button, input, select, textarea {
 
 .service-card {
     padding: 3.5rem 2.5rem;
-    border-radius: 4px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1250,7 +1245,7 @@ button, input, select, textarea {
 }
 
 .portfolio-item {
-    border-radius: 4px;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
     aspect-ratio: 1 / 1;
