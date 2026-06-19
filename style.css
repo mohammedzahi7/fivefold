@@ -2405,6 +2405,10 @@ button, input, select, textarea {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+    .services-grid, .why-us-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
@@ -2464,7 +2468,7 @@ button, input, select, textarea {
         max-width: 100%;
     }
     .pillars-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 
