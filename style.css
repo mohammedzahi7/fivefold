@@ -2035,7 +2035,7 @@ button, input, select, textarea {
    ========================================================================== */
 .back-to-top {
     position: fixed;
-    bottom: 2.5rem;
+    bottom: 6.5rem;
     right: 2.5rem;
     width: 46px;
     height: 46px;
@@ -2070,7 +2070,7 @@ button, input, select, textarea {
 .whatsapp-float-widget {
     position: fixed;
     bottom: 2.5rem;
-    left: 2.5rem;
+    right: 2.5rem;
     width: 52px;
     height: 52px;
     border-radius: 50%;
@@ -2513,12 +2513,12 @@ button, input, select, textarea {
         text-align: center;
     }
     .back-to-top {
-        bottom: 1.5rem;
+        bottom: 5.5rem;
         right: 1.5rem;
     }
     .whatsapp-float-widget {
         bottom: 1.5rem;
-        left: 1.5rem;
+        right: 1.5rem;
     }
     .pillars-grid {
         grid-template-columns: 1fr;
@@ -2661,7 +2661,7 @@ button, input, select, textarea {
 
 @media (max-width: 768px) {
     .floating-mobile-cta {
-        display: flex;
+        display: none !important;
     }
 }
 

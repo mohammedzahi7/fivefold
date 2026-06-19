@@ -317,15 +317,42 @@ if (slides.length > 0 && nextBtn && prevBtn) {
 // ==========================================================================
 const projectModal = document.getElementById('projectModal');
 
+const buildProjectList = () => {
+    const list = [];
+    document.querySelectorAll('.portfolio-item .btn-project-view').forEach(btn => {
+        const onClickStr = btn.getAttribute('onclick') || '';
+        const argsStr = onClickStr.substring(onClickStr.indexOf('(') + 1, onClickStr.lastIndexOf(')'));
+        let parts = argsStr.split("', '");
+        if (parts.length >= 4) {
+            list.push({
+                client: parts[0].replace(/^'/, ''),
+                category: parts[1],
+                imgSrc: parts[2],
+                description: parts[3].replace(/'$/, '')
+            });
+        }
+    });
+    return list;
+};
+
+let projectsData = [];
+let currentProjectIndex = -1;
+
 window.openProjectModal = (client, category, imgSrc, description) => {
+    if (projectsData.length === 0) projectsData = buildProjectList();
+    
+    currentProjectIndex = projectsData.findIndex(p => p.client === client);
+
     const modalTitle = document.getElementById('modalTitle');
     const modalTag = document.getElementById('modalTag');
     const modalDesc = document.getElementById('modalDesc');
     const modalMedia = document.getElementById('modalMedia');
+    const modalBreadcrumbName = document.getElementById('modalBreadcrumbName');
     
     modalTitle.innerText = client;
     modalTag.innerText = category;
     modalDesc.innerText = description;
+    if(modalBreadcrumbName) modalBreadcrumbName.innerText = client;
     
     if (imgSrc) {
         modalMedia.innerHTML = `<img src="${imgSrc}" alt="${client}" class="modal-img">`;
@@ -348,6 +375,17 @@ window.openProjectModal = (client, category, imgSrc, description) => {
     
     projectModal.classList.add('show');
     document.body.style.overflow = 'hidden';
+};
+
+window.navigateProject = (direction) => {
+    if (projectsData.length === 0 || currentProjectIndex === -1) return;
+    
+    let newIndex = currentProjectIndex + direction;
+    if (newIndex < 0) newIndex = projectsData.length - 1;
+    if (newIndex >= projectsData.length) newIndex = 0;
+    
+    const p = projectsData[newIndex];
+    window.openProjectModal(p.client, p.category, p.imgSrc, p.description);
 };
 
 window.closeProjectModal = () => {

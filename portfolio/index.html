@@ -424,6 +424,10 @@
         <div class="modal-content glass-panel">
             <span class="close-modal" onclick="closeProjectModal()">&times;</span>
             <div class="modal-body">
+                <!-- Breadcrumb -->
+                <div class="modal-breadcrumb" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem; color: var(--text-muted); font-family: var(--font-accent);">
+                    Home <span style="margin: 0 5px; color: var(--gold);">/</span> Portfolio <span style="margin: 0 5px; color: var(--gold);">/</span> <span id="modalBreadcrumbName" style="color: var(--text-white); font-weight: 700;">Project Name</span>
+                </div>
                 <div class="modal-media-container" id="modalMedia">
                     <!-- Dynamic Media -->
                 </div>
@@ -432,6 +436,13 @@
                     <h3 class="modal-title" id="modalTitle">Project Name</h3>
                     <p class="modal-desc" id="modalDesc">Detailed description of project challenges, visual styles, and delivery specs.</p>
                     <a href="../contact/" class="btn btn-primary" onclick="closeProjectModal()">Discuss Similar Project</a>
+                    
+                    <!-- Secondary Navigation -->
+                    <div class="modal-nav" style="display: flex; justify-content: space-between; align-items: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+                        <button id="modalPrevBtn" class="btn-text" style="font-size: 0.75rem;" onclick="navigateProject(-1)"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Prev</button>
+                        <button class="btn-text" style="font-size: 0.75rem;" onclick="closeProjectModal()"><i class="fas fa-th" style="margin-right: 5px;"></i> Grid</button>
+                        <button id="modalNextBtn" class="btn-text" style="font-size: 0.75rem;" onclick="navigateProject(1)">Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
